@@ -2,7 +2,7 @@ let date = new Date().setHours(12, 0, 0, 0)
 let day
 function time() {
    date = date + 10
-   day = 2//date.getDay()
+   day = 3//date.getDay()
 }
 
 function twoDigits(num) {
