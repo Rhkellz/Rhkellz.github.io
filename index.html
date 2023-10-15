@@ -3,7 +3,7 @@
 @import 'https://fonts.googleapis.com/css?family=Lato:300';
 
 body {
-  background-color: blue; 
+  background-color: green; 
   text-align:center;
 }
 
@@ -27,16 +27,15 @@ body {
 }
 
 </style>
-<button type="button" onclick="myFunction()">Set background color</button>
 
 <script>
 function myFunction() {
-  document.body.style.backgroundColor = "red";
+  document.body.style.backgroundColor = "blue";
 }
 </script>
 
 </head>
-<body>
+<body onload="myFunction()">>
   <div id="clock">
   </div>
   <div id="percent">
