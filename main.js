@@ -1,10 +1,10 @@
-/*let date
+let date
 let day
 //setInterval(time, 10)
 time()
 function time() {
    date = new Date()
-   day = date.getDay()
+   day = 2//date.getDay()
 }
 
 function twoDigits(num) {
@@ -24,7 +24,7 @@ function timer(x) {
 }
 
 function updateTimer() {
-  //date = new Date().setHours(13, 0, 0, 0)
+  date = new Date().setHours(13, 0, 0, 0)
   let periods
   let operiods
   let percent
@@ -133,6 +133,3 @@ if (isMobileDevice) {
   document.getElementById("clock").style.marginTop = "-7%"
   document.getElementById("percent").style.marginTop = "-3%"
 }
-*/
-
- document.body.style.backgroundColor = "red"
