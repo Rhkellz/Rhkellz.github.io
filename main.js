@@ -120,8 +120,9 @@ function updateTimer() {
 }
 
 
-//setInterval(updateTimer, 10)
-updateTimer()
+function updateUpdateTimer() {
+   setInterval(updateTimer, 10)
+}
 let regexp = /android|iphone|kindle|ipad/i
 let isMobileDevice = regexp.test(navigator.userAgent)
 if (isMobileDevice) {
