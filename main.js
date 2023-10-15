@@ -1,6 +1,7 @@
 let date
 let day
-setInterval(time, 10)
+//setInterval(time, 10)
+time()
 function time() {
    date = new Date()
    day = date.getDay()
@@ -119,7 +120,8 @@ function updateTimer() {
 }
 
 
-setInterval(updateTimer, 10)
+//setInterval(updateTimer, 10)
+updateTimer()
 let regexp = /android|iphone|kindle|ipad/i
 let isMobileDevice = regexp.test(navigator.userAgent)
 if (isMobileDevice) {
