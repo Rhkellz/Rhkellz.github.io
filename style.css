@@ -12,12 +12,12 @@ body {
   color: #DEDEDE;
   text-align: center;
   position: fixed;
-  top: 50%;
+  top: 80%;
   left: 50%;
   width: 500vw;
-  margin-top: -40%;
+  margin-top: -3%;
+  padding-top: 0%;
   margin-left: -250vw;
-  margin-bottom: 15%;
 }
 
 #percent {
