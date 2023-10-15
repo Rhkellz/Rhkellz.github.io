@@ -1,4 +1,4 @@
-let date
+/*let date
 let day
 //setInterval(time, 10)
 time()
@@ -133,3 +133,6 @@ if (isMobileDevice) {
   document.getElementById("clock").style.marginTop = "-7%"
   document.getElementById("percent").style.marginTop = "-3%"
 }
+*/
+
+ document.body.style.backgroundColor = "red"
