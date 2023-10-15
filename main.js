@@ -24,7 +24,7 @@ function timer(x) {
 }
 
 function updateTimer() {
-  date = new Date().setHours(13, 0, 0, 0)
+  //date = new Date().setHours(13, 0, 0, 0)
   let periods
   let operiods
   let percent
