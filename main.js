@@ -1,8 +1,9 @@
 let date
 let day
+setInterval(time, 10)
 function time() {
    date = date + 10
-   day = 2//date.getDay()
+   day = 2
 }
 
 function twoDigits(num) {
@@ -22,7 +23,7 @@ function timer(x) {
 }
 
 function updateTimer() {
-  //date = new Date().setHours(13, 0, 0, 0)
+  //date = new Date().setHours(14, 5, 0, 0)
   let periods
   let operiods
   let percent
@@ -123,6 +124,7 @@ function updateUpdateTimer() {
    setInterval(time, 10)
    setInterval(updateTimer, 10)
 }
+updateUpdateTimer()
 let regexp = /android|iphone|kindle|ipad/i
 let isMobileDevice = regexp.test(navigator.userAgent)
 if (isMobileDevice) {
