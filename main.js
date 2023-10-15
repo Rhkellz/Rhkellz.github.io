@@ -1,8 +1,8 @@
 let date = new Date().setHours(12, 0, 0, 0)
 let day
 function time() {
-   //date = date + 10
-   day = 3//date.getDay()
+   date = date + 10
+   day = 2//date.getDay()
 }
 
 function twoDigits(num) {
@@ -119,6 +119,7 @@ function updateTimer() {
 
 
 function updateUpdateTimer() {
+   date = new Date().setHours(12, 0, 0, 0)
    setInterval(time, 10)
    setInterval(updateTimer, 10)
 }
