@@ -3,7 +3,7 @@ let day
 setInterval(time, 10)
 function time() {
    date = new Date()
-   day = 2 //date.getDay()
+   day = date.getDay()
 }
 
 function twoDigits(num) {
