@@ -1,7 +1,7 @@
-let date = new Date().setHours(12, 0, 0, 0)
+let date
 let day
 function time() {
-   //date = date + 10
+   date = date + 10
    day = 2//date.getDay()
 }
 
@@ -119,6 +119,7 @@ function updateTimer() {
 
 
 function updateUpdateTimer() {
+   date = new Date().setHours(12, 0, 0, 0)
    setInterval(time, 10)
    setInterval(updateTimer, 10)
 }
