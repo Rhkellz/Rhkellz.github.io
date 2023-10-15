@@ -117,7 +117,6 @@ function updateTimer() {
   }  
 }
 
-
 function updateUpdateTimer() {
    setInterval(time, 10)
    setInterval(updateTimer, 10)
