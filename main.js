@@ -1,7 +1,7 @@
-let date// = new Date().setHours(12, 0, 0, 0)
+let date = new Date().setHours(12, 0, 0, 0)
 let day
 function time() {
-   date = new Date()
+   //date = date + 10
    day = 2//date.getDay()
 }
 
