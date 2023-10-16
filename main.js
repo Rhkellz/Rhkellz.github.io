@@ -57,7 +57,7 @@ function updateTimer() {
         {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(13, 5, 0, 0)},
         {start: new Date().setHours(13, 15, 0, 0), end: new Date().setHours(13, 55, 0, 0)},
         {start: new Date().setHours(14, 5, 0, 0), end: new Date().setHours(15, 35, 0, 0)},
-        {start: new Date().setHours(15, 45, 0, 0), end: new Date().setHours(16, 00, 0, 0)}//fixes a 2:07 bug because i dont know how my code works 
+        {start: new Date().setHours(15, 45, 0, 0), end: new Date().setHours(16, 0, 0, 0)}//fixes a 2:07 bug because i dont know how my code works 
       ]
       operiods = [
         {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(12, 20, 0, 0)},
@@ -79,7 +79,7 @@ function updateTimer() {
         {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(13, 5, 0, 0)},
         {start: new Date().setHours(13, 15, 0, 0), end: new Date().setHours(13, 55, 0, 0)},
         {start: new Date().setHours(14, 5, 0, 0), end: new Date().setHours(15, 35, 0, 0)},
-        {start: new Date().setHours(15, 45, 0, 0), end: new Date().setHours(16, 00, 0, 0)}//fixes a 2:07 bug because i dont know how my code works
+        {start: new Date().setHours(15, 45, 0, 0), end: new Date().setHours(16, 0, 0, 0)}//fixes a 2:07 bug because i dont know how my code works
       ]
       operiods = [
         {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(12, 20, 0, 0)},
