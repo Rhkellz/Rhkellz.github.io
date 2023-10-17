@@ -132,3 +132,6 @@ if (isMobileDevice) {
   document.getElementById("clock").style.marginTop = "-7%"
   document.getElementById("percent").style.marginTop = "-3%"
 }
+import users from "./JSONN/csvjson.json" assert {type: 'json'};
+console.log(users);
+console.log(users[0].day)
