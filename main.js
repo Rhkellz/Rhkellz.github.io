@@ -24,9 +24,9 @@ function timer(x) {
 
 function updateTimer() {
   //date = new Date().setHours(13, 0, 0, 0)
+  let timeleft
+  let otimeleft
   var monthDate = 16
-   let timeleft
-   let otimeleft
   let periods
   let operiods
   let percent
@@ -39,6 +39,7 @@ function updateTimer() {
       typeDay = data[i].typeday
     }
   }
+  console.log(typeDay)
   switch (typeDay) {
     case 1:
       periods = [
@@ -129,16 +130,5 @@ function updateUpdateTimer() {
    setInterval(time, 10)
    setInterval(updateTimer, 10)
 }
-let regexp = /android|iphone|kindle|ipad/i
-let isMobileDevice = regexp.test(navigator.userAgent)
-if (isMobileDevice) {
-  document.getElementById("clock").style.marginTop = "-40%"
-  document.getElementById("percent").style.marginTop = "-40%"
-  document.getElementById("clock").style.fontSize = "14vw"
-  document.getElementById("percent").style.fontSize = "14vw"
-} else {
-  document.getElementById("clock").style.marginTop = "-7%"
-  document.getElementById("percent").style.marginTop = "-3%"
-}
 
-window.addEventListener('load', updateTimer)
+window.addEventListener('load', updateUpdateTimer)
