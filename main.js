@@ -35,7 +35,6 @@ function updateTimer() {
   for (var i = 0; i < data.length; i++) {
     if (data[i].day == monthDate) {
       typeDay = data[i].typeday
-      test = data[i].day
     }
   }
   switch (typeDay) {
