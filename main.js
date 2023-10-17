@@ -147,3 +147,5 @@ function updateUpdateTimer() {
 }
 
 window.addEventListener('load', updateUpdateTimer)
+
+window.addEventListener('load', updateUpdateTimer)
