@@ -25,7 +25,6 @@ function timer(x) {
 function updateTimer() {
   //date = new Date().setHours(13, 0, 0, 0)
   var monthDate = 16
-   var test
   let periods
   let operiods
   let percent
@@ -35,13 +34,10 @@ function updateTimer() {
   let sEnd
   for (var i = 0; i < data.length; i++) {
     if (data[i].day == monthDate) {
-       console.log(data[i].day)
       typeDay = data[i].typeday
       test = data[i].day
     }
   }
-    console.log(typeDay)
-  console.log(test)
   switch (typeDay) {
     case 1:
       periods = [
@@ -77,8 +73,8 @@ function updateTimer() {
         {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 55, 0, 0)}
       ]
       document.body.style.backgroundColor = "#ff7000"
-      timeleft = timer(periods)[0]
-      otimeleft = timer(operiods)[0]
+      let timeleft = timer(periods)[0]
+      let otimeleft = timer(operiods)[0]
       sEnd = new Date().setHours(15, 35, 0, 0)
       percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
       opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
