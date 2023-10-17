@@ -44,6 +44,7 @@ function updateTimer() {
           if (data[i].month == month) {
             if (data[i].day == monthDate) {
               typeDay = data[i].typeday
+               console.log(typeDay)
               switch (typeDay) {
                 case 1:
                   periods = [
