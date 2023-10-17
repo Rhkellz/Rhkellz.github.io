@@ -1,6 +1,9 @@
 let date
 let day
-import data from "./JSONN/csvjson.json" assert {type: 'json'};
+fetch('./JSONN/csvjson.json')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
 function time() {
    date = new Date()
    day = date.getDay()
@@ -34,9 +37,9 @@ function updateTimer() {
   let typeDay
   let sStart = new Date().setHours(8, 30, 0, 0)
   let sEnd
-  for (var i = 0; i < data.length; i++) {
+  for (var i = 0; i < json.length; i++) {
     if (data[i].day == monthDate) {
-      typeDay = data[i].typeday
+      typeDay = json[i].typeday
     }
   }
   console.log(typeDay)
