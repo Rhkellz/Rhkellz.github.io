@@ -137,8 +137,17 @@ function updateTimer() {
           }
         }
       })
-  //console.log(typeDay)
-   
+   let regexp = /android|iphone|kindle|ipad/i
+let isMobileDevice = regexp.test(navigator.userAgent)
+if (isMobileDevice) {
+  document.getElementById("clock").style.marginTop = "-40%"
+  document.getElementById("percent").style.marginTop = "-40%"
+  document.getElementById("clock").style.fontSize = "14vw"
+  document.getElementById("percent").style.fontSize = "14vw"
+} else {
+  document.getElementById("clock").style.marginTop = "-7%"
+  document.getElementById("percent").style.marginTop = "-3%"
+}
 }
 
 function updateUpdateTimer() {
