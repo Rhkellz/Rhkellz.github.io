@@ -36,6 +36,8 @@ function updateTimer() {
     if (data[i].day == monthDate) {
        console.log(data[i].day)
       typeDay = data[i].typeday
+    } else {
+       typeDay = 10
     }
   }
   console.log(typeDay)
