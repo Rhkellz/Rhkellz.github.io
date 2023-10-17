@@ -34,6 +34,7 @@ function updateTimer() {
   let sEnd
   for (var i = 0; i < data.length; i++) {
     if (data[i].day == monthDate) {
+       console.log(data[i].day
       typeDay = data[i].typeday
     }
   }
