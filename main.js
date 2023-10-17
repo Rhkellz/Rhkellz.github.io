@@ -25,6 +25,7 @@ function timer(x) {
 function updateTimer() {
   //date = new Date().setHours(13, 0, 0, 0)
   var monthDate = 16
+   var test
   let periods
   let operiods
   let percent
@@ -36,11 +37,11 @@ function updateTimer() {
     if (data[i].day == monthDate) {
        console.log(data[i].day)
       typeDay = data[i].typeday
-    } else {
-       typeDay = 10
+      test = data[i].day
     }
   }
-  console.log(typeDay + 1)
+    console.log(typeDay)
+  console.log(test)
   switch (typeDay) {
     case 1:
       periods = [
