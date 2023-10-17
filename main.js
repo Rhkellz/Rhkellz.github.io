@@ -25,6 +25,8 @@ function timer(x) {
 function updateTimer() {
   //date = new Date().setHours(13, 0, 0, 0)
   var monthDate = 16
+   let timeleft
+   let otimeleft
   let periods
   let operiods
   let percent
@@ -72,8 +74,8 @@ function updateTimer() {
         {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 55, 0, 0)}
       ]
       document.body.style.backgroundColor = "#ff7000"
-      let timeleft = timer(periods)[0]
-      let otimeleft = timer(operiods)[0]
+      timeleft = timer(periods)[0]
+      otimeleft = timer(operiods)[0]
       sEnd = new Date().setHours(15, 35, 0, 0)
       percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
       opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
