@@ -26,7 +26,7 @@ function updateTimer() {
   //date = new Date().setHours(13, 0, 0, 0)
   let timeleft
   let otimeleft
-  var monthDate = date.getDate()
+  var monthDate = 24//date.getDate()
   var month = date.getMonth()
   let periods
   let operiods
@@ -108,6 +108,15 @@ function updateTimer() {
                   break
                 case 4:
                   document.body.style.backgroundColor = "gray"
+                case 5:
+                  periods = [
+                    {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(12, 0, 0, 0)}
+                  ]
+                  document.body.style.backgroundColor = "purple"
+                  timeleft = timer(periods)[0]
+                  otimeleft = -1
+                  sEnd = new Date().setHours(12, 0, 0, 0)
+                  percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
                 default:
                   timeleft = -1
                   otimeleft = -1
