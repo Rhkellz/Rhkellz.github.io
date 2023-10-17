@@ -144,4 +144,4 @@ if (isMobileDevice) {
   document.getElementById("percent").style.marginTop = "-3%"
 }
 
-window.addEventListener('load', updateUpdateTimer)
+window.addEventListener('load', updateTimer)
