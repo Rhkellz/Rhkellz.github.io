@@ -22,7 +22,7 @@ function timer(x) {
   return -1
 }
 
-function updateTimer() {
+function updateTimer(x, y) {
   //date = new Date().setHours(13, 0, 0, 0)
   let timeleft
   let otimeleft
@@ -121,37 +121,35 @@ function updateTimer() {
               const oseconds = Math.floor(otimeleft / 1000) % 60
             
               if (otimeleft == -1 || date < obar || otimeleft == null) {
-                document.getElementById("clock").innerText =`${twoDigits(minutes)}:${twoDigits(seconds)}` + " left " + percent + "%"
+                document.getElementById(x).innerText =`${twoDigits(minutes)}:${twoDigits(seconds)}` + " left " + percent + "%"
               } else {
-                document.getElementById("clock").innerText =`${twoDigits(minutes)}:${twoDigits(seconds)}` + " left " + percent + "%"; document.getElementById("percent").innerText = `${twoDigits(ominutes)}:${twoDigits(oseconds)}` + " left " + opercent + "%"
+                document.getElementById(x).innerText =`${twoDigits(minutes)}:${twoDigits(seconds)}` + " left " + percent + "%"; document.getElementById(y).innerText = `${twoDigits(ominutes)}:${twoDigits(oseconds)}` + " left " + opercent + "%"
               }
               
             
               if (date >= sEnd || date <= sStart || timeleft == -1) { 
-                document.getElementById("clock").innerText = "School's over"
+                document.getElementById(x).innerText = "School's over"
               } 
               if (typeDay == 4) {
-                document.getElementById("clock").innerText = "No School"
+                document.getElementById(x).innerText = "No School"
               }
             }
           }
         }
       })
-   let regexp = /android|iphone|kindle|ipad/i
-let isMobileDevice = regexp.test(navigator.userAgent)
-if (isMobileDevice) {
-  document.getElementById("clock").style.marginTop = "-40%"
-  document.getElementById("percent").style.marginTop = "-40%"
-  document.getElementById("clock").style.fontSize = "14vw"
-  document.getElementById("percent").style.fontSize = "14vw"
-}
+   
 }
 
 function updateUpdateTimer() {
-   setInterval(time, 10)
-   setInterval(updateTimer, 10)
+  let regexp = /android|iphone|kindle|ipad/i
+  let isMobileDevice = regexp.test(navigator.userAgent)
+  if (isMobileDevice) {
+    setInterval(time, 10)
+    setInterval(updateTimer, 10, "time1mobile", "time2mobile")
+  } else {
+    setInterval(time, 10)
+    setInterval(updateTimer, 10, "time1", "time2")
+  }
 }
-
-window.addEventListener('load', updateUpdateTimer)
 
 window.addEventListener('load', updateUpdateTimer)
