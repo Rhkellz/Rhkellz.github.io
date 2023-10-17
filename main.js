@@ -1,5 +1,6 @@
 let date
 let day
+import data from "./JSONN/csvjson.json" assert {type: 'json'};
 function time() {
    date = new Date()
    day = date.getDay()
@@ -23,13 +24,21 @@ function timer(x) {
 
 function updateTimer() {
   //date = new Date().setHours(13, 0, 0, 0)
+  var monthDate = 16
   let periods
   let operiods
   let percent
   let opercent
+  let typeDay
   let sStart = new Date().setHours(8, 30, 0, 0)
   let sEnd
-  switch (day) {
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].day == monthDate) {
+      typeDay = data[i].typeday
+    }
+  }
+  console.log(typeDay)
+  switch (typeDay) {
     case 1:
       periods = [
         {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 3, 0, 0)},
@@ -50,7 +59,6 @@ function updateTimer() {
       percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
       break
     case 2:
-    case 4:
       periods = [
         {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 55, 0, 0)},
         {start: new Date().setHours(10, 5, 0, 0), end: new Date().setHours(11, 30, 0, 0)},
@@ -72,7 +80,6 @@ function updateTimer() {
       opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
       break
     case 3:
-    case 5:
       periods = [
         {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 55, 0, 0)},
         {start: new Date().setHours(10, 5, 0, 0), end: new Date().setHours(11, 30, 0, 0)},
@@ -132,6 +139,5 @@ if (isMobileDevice) {
   document.getElementById("clock").style.marginTop = "-7%"
   document.getElementById("percent").style.marginTop = "-3%"
 }
-import users from "./JSONN/csvjson.json" assert {type: 'json'};
-console.log(users);
-console.log(users[0].day)
+
+window.addEventListener('load', updateUpdateTimer)
