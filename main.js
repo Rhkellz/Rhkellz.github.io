@@ -40,7 +40,7 @@ function updateTimer() {
        typeDay = 10
     }
   }
-  console.log(typeDay)
+  console.log(typeDay + 1)
   switch (typeDay) {
     case 1:
       periods = [
