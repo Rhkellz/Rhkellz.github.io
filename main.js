@@ -38,7 +38,7 @@ function updateTimer() {
   let sStart = new Date().setHours(8, 30, 0, 0)
   let sEnd
   for (var i = 0; i < json.length; i++) {
-    if (data[i].day == monthDate) {
+    if (json[i].day == monthDate) {
       typeDay = json[i].typeday
     }
   }
