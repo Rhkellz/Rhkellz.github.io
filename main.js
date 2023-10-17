@@ -26,7 +26,7 @@ function updateTimer() {
   //date = new Date().setHours(13, 0, 0, 0)
   let timeleft
   let otimeleft
-  var monthDate = date.getDate()
+  var monthDate = 24//date.getDate()
   var month = date.getMonth()
   let periods
   let operiods
