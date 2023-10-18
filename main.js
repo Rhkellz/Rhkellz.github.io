@@ -45,7 +45,7 @@ function updateTimer() {
             if (data[i].day == monthDate) {
               typeDay = data[i].typeday
               switch (typeDay) {
-                case 1:
+                case 1://wildkit monday
                   periods = [
                     {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 3, 0, 0)},
                     {start: new Date().setHours(9, 8, 0, 0), end: new Date().setHours(9, 41, 0, 0)},
@@ -64,7 +64,7 @@ function updateTimer() {
                   sEnd = new Date().setHours(14, 7, 0, 0)
                   percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
                   break
-                case 2:
+                case 2://orange day
                   periods = [
                     {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 55, 0, 0)},
                     {start: new Date().setHours(10, 5, 0, 0), end: new Date().setHours(11, 30, 0, 0)},
@@ -85,7 +85,7 @@ function updateTimer() {
                   percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
                   opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
                   break
-                case 3:
+                case 3://blue days
                   periods = [
                     {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 55, 0, 0)},
                     {start: new Date().setHours(10, 5, 0, 0), end: new Date().setHours(11, 30, 0, 0)},
@@ -106,11 +106,11 @@ function updateTimer() {
                   percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
                   opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
                   break
-                case 4:
+                case 4://no school
                   document.body.style.backgroundColor = "gray"
-                case 5:
+                case 5://futures day
                   periods = [
-                    {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(12, 0, 0, 0)}
+                    {start: new Date().setHours(8, 0, 0, 0), end: new Date().setHours(12, 0, 0, 0)}
                   ]
                   document.body.style.backgroundColor = "purple"
                   timeleft = timer(periods)[0]
