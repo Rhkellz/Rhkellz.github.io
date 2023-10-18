@@ -35,7 +35,7 @@ function updateTimer() {
   let typeDay
   let sStart = new Date().setHours(8, 30, 0, 0)
   let sEnd
-  fetch('./data/monthschedule')
+  fetch('./data/monthschedule.json')
       .then(function(resp) {
         return resp.json()
       })
