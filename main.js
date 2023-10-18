@@ -137,9 +137,11 @@ function updateTimer() {
               }
               
             
-              if (date >= sEnd || date <= sStart || timeleft == -1) { 
+              if (date >= sEnd || timeleft == -1) { 
                 document.getElementById("clock").innerText = "School's over"
-              } 
+              } elif (date <= sStart) {
+                document.getElementById("clock").innerText = "School hasn't started"
+              }
               if (typeDay == 4) {
                 document.getElementById("clock").innerText = "No School"
               }
