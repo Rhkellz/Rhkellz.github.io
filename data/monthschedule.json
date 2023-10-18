@@ -42,7 +42,7 @@
   {
     "month": 9,
     "day": 24,
-    "typeday": 5
+    "typeday": 2
   },
   {
     "month": 9,
@@ -78,5 +78,80 @@
     "month": 9,
     "day": 31,
     "typeday": 2
+  },
+  {
+    "month": 10,
+    "day": 1,
+    "typeday": 3
+  },
+  {
+    "month": 10,
+    "day": 2,
+    "typeday": 2
+  },
+  {
+    "month": 10,
+    "day": 3,
+    "typeday": 3
+  },
+  {
+    "month": 10,
+    "day": 4,
+    "typeday": 4
+  },
+  {
+    "month": 10,
+    "day": 5,
+    "typeday": 4
+  },
+  {
+    "month": 10,
+    "day": 6,
+    "typeday": 1
+  },
+  {
+    "month": 10,
+    "day": 7,
+    "typeday": 2
+  },
+  {
+    "month": 10,
+    "day": 8,
+    "typeday": 3
+  },
+  {
+    "month": 10,
+    "day": 9,
+    "typeday": 2
+  },
+  {
+    "month": 10,
+    "day": 10,
+    "typeday": 4
+  },
+  {
+    "month": 10,
+    "day": 11,
+    "typeday": 4
+  },
+  {
+    "month": 10,
+    "day": 12,
+    "typeday": 4
+  },
+  {
+    "month": 10,
+    "day": 13,
+    "typeday": 1
+  },
+  {
+    "month": 10,
+    "day": 14,
+    "typeday": 2
+  },
+  {
+    "month": 10,
+    "day": 15,
+    "typeday": 3
   }
 ]
