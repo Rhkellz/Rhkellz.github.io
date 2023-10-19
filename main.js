@@ -23,7 +23,7 @@ function timer(x) {
 }
 
 function updateTimer() {
-  date = new Date().setHours(15, 36, 0, 0)
+  //date = new Date().setHours(15, 36, 0, 0)
   let timeleft
   let otimeleft
   var monthDate = date.getDate()
