@@ -108,6 +108,7 @@ function updateTimer() {
                   break
                 case 4://no school
                   document.body.style.backgroundColor = "gray"
+                  break
                 case 5://futures day
                   periods = [
                     {start: new Date().setHours(8, 0, 0, 0), end: new Date().setHours(12, 0, 0, 0)}
