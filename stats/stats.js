@@ -182,9 +182,9 @@ function updateTimer() {
                             } else {
                                 weekCompleted += getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end - getPeriods(data[currentDay].typeday)[0].start
                             }
-                            console.log(weekTotal)
+                            console.log(weekCompleted)
                             let weekPercent = Math.floor(100 - (weekCompleted / weekTotal) * 100)
-                            document.getElementById("weekPercent").innerText = weekPercent + "% school week complete"
+                            document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
                         }
                     }
                 }
