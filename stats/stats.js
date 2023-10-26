@@ -36,7 +36,7 @@ function updateTimer() {
   let sStart = new Date().setHours(8, 30, 0, 0)
   let sEnd
   let obar = new Date().setHours(11, 40, 0, 0)
-  fetch('./data/monthschedule.json')
+  fetch('/data/monthschedule.json')
       .then(function(resp) {
         return resp.json()
       })
