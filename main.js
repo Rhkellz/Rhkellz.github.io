@@ -160,7 +160,7 @@ function updateTimer() {
               const dayCompleted = periods[periods.length - 1].end - date
               const dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
 
-              document.getElementById("clock").innerText = dayPercent + "%"
+              document.getElementById("dayPercent").innerText = dayPercent + "%"
             }
           }
         }
