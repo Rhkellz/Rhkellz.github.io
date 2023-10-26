@@ -154,13 +154,6 @@ function updateTimer() {
               if (typeDay == 4) {
                 document.getElementById("clock").innerText = "No School"
               }
-
-            //stats
-              const dayTotal = periods[periods.length - 1].end - periods[0].start
-              const dayCompleted = periods[periods.length - 1].end - date
-              const dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
-
-              document.getElementById("dayPercent").innerText = dayPercent + "%"
             }
           }
         }
