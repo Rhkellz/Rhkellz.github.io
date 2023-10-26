@@ -152,8 +152,7 @@ function updateTimer() {
                     dayCompleted = periods[periods.length - 1].end - date
                 }
                 let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
-                document.getElementById("dayPercent").innerText = dayPercent + "%"
-                console.log(periods[periods.length - 1].end - periods[0].start)
+                document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
                 }
             
                 let weekStart
@@ -184,8 +183,8 @@ function updateTimer() {
                                 weekCompleted += getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end - getPeriods(data[currentDay].typeday)[0].start
                             }
                             
-                            let weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
-                            document.getElementById("weekPercent").innerText = weekPercent + "%"
+                            let weekPercent = Math.floor(100 - (weekCompleted / weekTotal) * 100)
+                            document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
                         }
                     }
                 }
