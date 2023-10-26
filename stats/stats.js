@@ -144,14 +144,14 @@ function updateTimer() {
                     document.body.style.backgroundColor = "gray"
                     }
                 
-                let dayTotal = periods[periods.length - 1].end - periods[0].start
+                let dayTotal = periods[periods.length - 1].end - periods[0].start;
                 let dayCompleted
                 if (date > periods[periods.length - 1].end) {
                     dayCompleted = periods[periods.length - 1].end - periods[0].start
                 } else {
                     dayCompleted = periods[periods.length - 1].end - date
                 }
-                let dayPercent = Math.floor((dayCompleted / dayTotal) * 100)
+                let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
                 document.getElementById("dayPercent").innerText = dayPercent + "%"
                 console.log(periods[periods.length - 1].end - periods[0].start)
                 }
