@@ -142,8 +142,7 @@ function updateTimer() {
               }
             }
           }
-        }
-      })
+        })
 }
 
 function updateUpdateTimer() {
