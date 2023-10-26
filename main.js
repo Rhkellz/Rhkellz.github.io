@@ -13,7 +13,8 @@ function twoDigits(num) {
 function timer(x) {
   for (let i = 0; i < x.length; i++) {
     if (date < x[i].start) {
-      return [x[i].start - date, x[i+1].start - x[i].end]
+      console.log(i)
+      return [x[i].start - date, x[i].start - x[i-1].end]
       }
     if (date < x[i].end) {
       return [x[i].end - date, x[i].end - x[i].start]
@@ -23,7 +24,6 @@ function timer(x) {
 }
 
 function updateTimer() {
-  //date = new Date().setHours(15, 36, 0, 0)
   let timeleft
   let otimeleft
   var monthDate = date.getDate()
@@ -35,6 +35,7 @@ function updateTimer() {
   let typeDay
   let sStart = new Date().setHours(8, 30, 0, 0)
   let sEnd
+  let obar = new Date().setHours(11, 40, 0, 0)
   fetch('./data/monthschedule.json')
       .then(function(resp) {
         return resp.json()
@@ -80,10 +81,14 @@ function updateTimer() {
                   ]
                   document.body.style.backgroundColor = "#ff7000"
                   timeleft = timer(periods)[0]
-                  otimeleft = timer(operiods)[0]
+                  if (date > obar) {
+                    otimeleft = -1
+                  } else {
+                    otimeleft = timer(operiods)[0]
+                    opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
+                  }
                   sEnd = new Date().setHours(15, 35, 0, 0)
                   percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
-                  opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
                   break
                 case 3://blue days
                   periods = [
@@ -101,10 +106,14 @@ function updateTimer() {
                   ]
                   document.body.style.backgroundColor = "#125e70"
                   timeleft = timer(periods)[0]
-                  otimeleft = timer(operiods)[0]
+                  if (date < obar) {
+                    otimeleft = -1
+                  } else {
+                    otimeleft = timer(operiods)[0]
+                    opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
+                  }
                   sEnd = new Date().setHours(15, 35, 0, 0)
                   percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
-                  opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
                   break
                 case 4://no school
                   document.body.style.backgroundColor = "gray"
@@ -124,14 +133,17 @@ function updateTimer() {
                   otimeleft = -1
                   document.body.style.backgroundColor = "gray"
                 }
-              var obar = new Date().setHours(11, 40, 0, 0)
               
               const minutes = Math.floor(timeleft / 1000 / 60)
               const seconds = Math.floor(timeleft / 1000) % 60
               const ominutes = Math.floor(otimeleft / 1000 / 60)
               const oseconds = Math.floor(otimeleft / 1000) % 60
-            
-              if (otimeleft == -1 || date < obar || otimeleft == null) {
+
+              const dayTotal = periods[periods.length - 1].end - periods[0].start
+              const dayCompleted = periods[periods.length - 1].end - date
+              const dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
+
+              if (otimeleft == -1 || otimeleft == null) {
                 document.getElementById("clock").innerText =`${twoDigits(minutes)}:${twoDigits(seconds)}` + " left " + percent + "%"
               } else {
                 document.getElementById("clock").innerText =`${twoDigits(minutes)}:${twoDigits(seconds)}` + " left " + percent + "%"; document.getElementById("percent").innerText = `${twoDigits(ominutes)}:${twoDigits(oseconds)}` + " left " + opercent + "%"
