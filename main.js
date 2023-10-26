@@ -13,8 +13,7 @@ function twoDigits(num) {
 function timer(x) {
   for (let i = 0; i < x.length; i++) {
     if (date < x[i].start) {
-      console.log(i)
-      return [x[i].start - date, x[i].start - x[i-1].end]
+      return [x[i].start - date, x[i+1].start - x[i].end]
       }
     if (date < x[i].end) {
       return [x[i].end - date, x[i].end - x[i].start]
