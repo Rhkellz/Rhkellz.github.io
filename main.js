@@ -138,7 +138,7 @@ function updateTimer() {
               const ominutes = Math.floor(otimeleft / 1000 / 60)
               const oseconds = Math.floor(otimeleft / 1000) % 60
 
-              if (otimeleft == -1 || otimeleft == null) {
+              if (otimeleft == -1 || date < obar || otimeleft == null) {
                 document.getElementById("clock").innerText =`${twoDigits(minutes)}:${twoDigits(seconds)}` + " left " + percent + "%"
               } else {
                 document.getElementById("clock").innerText =`${twoDigits(minutes)}:${twoDigits(seconds)}` + " left " + percent + "%"; document.getElementById("percent").innerText = `${twoDigits(ominutes)}:${twoDigits(oseconds)}` + " left " + opercent + "%"
