@@ -151,7 +151,7 @@ function updateTimer() {
                 } else {
                     dayCompleted = periods[periods.length - 1].end - date
                 }
-                let dayPercent = Math.floor((dayCompleted / dayTotal) * 100)
+                let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
                 document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
                 }
             
