@@ -139,10 +139,6 @@ function updateTimer() {
               const ominutes = Math.floor(otimeleft / 1000 / 60)
               const oseconds = Math.floor(otimeleft / 1000) % 60
 
-              const dayTotal = periods[periods.length - 1].end - periods[0].start
-              const dayCompleted = periods[periods.length - 1].end - date
-              const dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
-
               if (otimeleft == -1 || otimeleft == null) {
                 document.getElementById("clock").innerText =`${twoDigits(minutes)}:${twoDigits(seconds)}` + " left " + percent + "%"
               } else {
@@ -158,6 +154,13 @@ function updateTimer() {
               if (typeDay == 4) {
                 document.getElementById("clock").innerText = "No School"
               }
+
+            //stats
+              const dayTotal = periods[periods.length - 1].end - periods[0].start
+              const dayCompleted = periods[periods.length - 1].end - date
+              const dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
+
+              document.getElementById("clock").innerText = dayPercent + "%"
             }
           }
         }
