@@ -177,8 +177,8 @@ function updateTimer() {
                             for (var k = weekStart; k < currentDay; k++) {
                                 weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
                             }
-                            if (date < getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end) {
-                                weekCompleted += getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end - date
+                            if (date > getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end) {
+                                //weekCompleted += getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end - date
                             } else {
                                 weekCompleted += getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end - getPeriods(data[currentDay].typeday)[0].start
                             }
