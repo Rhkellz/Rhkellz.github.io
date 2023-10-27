@@ -178,9 +178,9 @@ function updateTimer() {
                                 weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
                             }
                             if (date < periods[periods.length - 1].end) {
-                                weekCompleted += date - getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end
+                                dayCompleted = periods[periods.length - 1].end - date
                             } else {
-                                weekCompleted += getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end - getPeriods(data[currentDay].typeday)[0].start
+                                weekCompleted += periods[periods.length - 1].end - periods[0].start
                             }
                             //console.log(weekCompleted)
                             let weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
