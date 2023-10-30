@@ -186,7 +186,7 @@ function updateTimer() {
                             }
                             //console.log(weekCompleted)
                             let weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
-                            document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
+                            document.getElementById("weekPercent").innerText = "a"//weekPercent + "% school week completed"
                         }
                     }
                 }
