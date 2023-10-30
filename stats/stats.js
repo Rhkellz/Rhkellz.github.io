@@ -159,11 +159,13 @@ function updateTimer() {
                 let weekEnd
 
                 for (var j = currentDay; j >= 0; j--) {
-                    if (data[j].typeday == 4) {
-                        if (data[j+1].typeday == 1 || data[j+1].typedaay == 2 || data[j+1].typeday == 3) {
-                            weekStart = j+1
-                        }
-                    }
+                   if (j >= date.getDate()) {
+                       if (data[j].typeday == 4) {
+                           if (data[j+1].typeday == 1 || data[j+1].typedaay == 2 || data[j+1].typeday == 3) {
+                               weekStart = j+1
+                           }
+                       }
+                   }
                 }
                 for (var h = weekStart; h < weekStart + 10; h++) {//10 is  problem
                     if (data[h].typeday == 4) {
@@ -174,8 +176,7 @@ function updateTimer() {
                             for (var l = weekStart; l <= weekEnd; l++) {
                                 weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
                             }
-                            for (var k = weekStart; k < currentDay; k++) {
-                               console.log(currentDay + " a")
+                            for (var k = weekStart; k <= currentDay; k++) {
                                 weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
                             }
                             if (date > getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end) {
