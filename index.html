@@ -2,14 +2,26 @@
 <head>
     <style>
       @import 'https://fonts.googleapis.com/css?family=Lato:300';
-      
+
+    @font-face {
+        font-family: 'Trip Sans';
+        src: url('TripSans-Bold.eot');
+        src: local('Trip Sans Bold'), local('TripSans-Bold'),
+            url('TripSans-Bold.eot?#iefix') format('embedded-opentype'),
+            url('TripSans-Bold.woff2') format('woff2'),
+            url('TripSans-Bold.woff') format('woff'),
+            url('TripSans-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
       body {
         background-color: black; 
         text-align:center;
       }
       
       #clock {
-        font-family: 'Lato', sans-serif;
+        font-family: 'Trip Sans', sans-serif;
         font-size: 6vmax;
         letter-spacing: .08rem;
         color: #DEDEDE;
@@ -19,7 +31,7 @@
       }
       
       #percent {
-        font-family: 'Lato', sans-serif;
+        font-family: 'Trip Sans', sans-serif;
         font-size: 6vmax;
         letter-spacing: .08rem;
         color: #DEDEDE;
