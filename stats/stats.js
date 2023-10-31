@@ -176,6 +176,7 @@ function updateTimer() {
                             let weekCompleted = 0
                             for (var l = weekStart; l <= weekEnd; l++) {
                                 weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
+                               console.log(weekEnd)
                             }
                             for (var k = weekStart; k <= currentDay; k++) {
                                 weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
