@@ -159,13 +159,13 @@ function updateTimer() {
                 let weekEnd
 
                 for (var j = currentDay; j >= 0; j--) {
-                   if (j >= date.getDate()) {
+                   //if (j >= date.getDate()) {
                        if (data[j].typeday == 4) {
                            if (data[j+1].typeday == 1 || data[j+1].typedaay == 2 || data[j+1].typeday == 3) {
                                weekStart = j+1
                            }
                        }
-                   }
+                   //}
                 }
                 console.log(weekStart)
                 for (var h = weekStart; h < (weekStart + 10); h++) {//10 is  problem
@@ -187,10 +187,9 @@ function updateTimer() {
                             }
                             //console.log(weekCompleted)
                             let weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
-                            document.getElementById("weekPercent").innerText = "a"//weekPercent + "% school week completed"
+                            document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
                         }
                     }
-                    document.getElementById("weekPercent").innerText = "a"
                 }
             }
         }
