@@ -190,6 +190,7 @@ function updateTimer() {
                         }
                     }
                 }
+             document.getElementById("weekPercent").innerText = "a"
             }
         }
     })
