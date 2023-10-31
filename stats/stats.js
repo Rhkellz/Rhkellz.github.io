@@ -189,8 +189,8 @@ function updateTimer() {
                             document.getElementById("weekPercent").innerText = "a"//weekPercent + "% school week completed"
                         }
                     }
+                    document.getElementById("weekPercent").innerText = "a"
                 }
-             document.getElementById("weekPercent").innerText = "a"
             }
         }
     })
