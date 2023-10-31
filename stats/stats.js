@@ -167,7 +167,7 @@ function updateTimer() {
                        }
                    //}
                 }
-                console.log(weekStart)
+                //console.log(weekStart)
                 for (var h = weekStart; h < (weekStart + 10); h++) {//10 is  problem
                     if (data[h].typeday == 4) {
                         if (data[h+1].typeday == 4 && (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3)) {
