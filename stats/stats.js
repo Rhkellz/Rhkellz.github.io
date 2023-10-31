@@ -154,8 +154,9 @@ function updateTimer() {
                 let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
                 document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
                 }
-            
-                let weekStart = 0
+            }
+        }
+         let weekStart = 0
                 let weekEnd = 0
                 let weekTotal = 0
                 let weekCompleted = 0
@@ -193,8 +194,6 @@ function updateTimer() {
                         }
                     }
                 }
-            }
-        }
     })
 }
 
