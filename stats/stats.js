@@ -160,7 +160,7 @@ function updateTimer() {
                 let weekTotal = 0
                 let weekCompleted = 0
 
-                for (var j = currentDay; j >= 0; j--) {
+                for (var j = new Date().getDate(); j >= 0; j--) {
                    //if (j >= date.getDate()) {
                        if (data[j].typeday == 4) {
                            if (data[j+1].typeday == 1 || data[j+1].typedaay == 2 || data[j+1].typeday == 3) {
@@ -178,13 +178,13 @@ function updateTimer() {
                             for (var l = weekStart; l <= weekEnd; l++) {
                                 weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
                             }
-                            for (var k = weekStart; k <= currentDay; k++) {
+                            for (var k = weekStart; k <= new Date().getDate(); k++) {
                                 weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
                             }
-                            if (date > getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end) {
-                                weekCompleted += getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end - getPeriods(data[currentDay].typeday)[0].start
+                            if (date > getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end) {
+                                weekCompleted += getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end - getPeriods(data[currentDay].typeday)[0].start
                             } else {
-                                weekCompleted += getPeriods(data[currentDay].typeday)[getPeriods(data[currentDay].typeday).length-1].end - new Date()
+                                weekCompleted += getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end - new Date()
                             }
                             //console.log(weekCompleted)
                             let weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
