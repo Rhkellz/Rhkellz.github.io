@@ -155,8 +155,10 @@ function updateTimer() {
                 document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
                 }
             
-                let weekStart
-                let weekEnd
+                let weekStart = 0
+                let weekEnd = 0
+                let weekTotal = 0
+                let weekCompleted = 0
 
                 for (var j = currentDay; j >= 0; j--) {
                    //if (j >= date.getDate()) {
@@ -173,8 +175,6 @@ function updateTimer() {
                         if (data[h+1].typeday == 4 && (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3)) {
                             weekEnd = h-1
                            console.log(weekStart + ", " + weekEnd)
-                            let weekTotal = 0
-                            let weekCompleted = 0
                             for (var l = weekStart; l <= weekEnd; l++) {
                                 weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
                             }
