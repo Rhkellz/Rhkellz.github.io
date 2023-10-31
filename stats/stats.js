@@ -172,11 +172,11 @@ function updateTimer() {
                     if (data[h].typeday == 4) {
                         if (data[h+1].typeday == 4 && (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3)) {
                             weekEnd = h-1
+                           console.log(weekStart + ", " + weekEnd)
                             let weekTotal = 0
                             let weekCompleted = 0
                             for (var l = weekStart; l <= weekEnd; l++) {
                                 weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
-                               console.log(weekEnd)
                             }
                             for (var k = weekStart; k <= currentDay; k++) {
                                 weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
@@ -189,6 +189,7 @@ function updateTimer() {
                             //console.log(weekCompleted)
                             let weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
                             document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
+                           break
                         }
                     }
                 }
