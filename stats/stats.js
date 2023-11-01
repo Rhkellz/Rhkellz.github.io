@@ -35,7 +35,7 @@ function getPeriods(x) {
           {start: new Date().setHours(12, 18, 0, 0), end: new Date().setHours(12, 51, 0, 0)},
           {start: new Date().setHours(12, 56, 0, 0), end: new Date().setHours(13, 29, 0, 0)},
           {start: new Date().setHours(13, 34, 0, 0), end: new Date().setHours(14, 7, 0, 0)}, 
-          {start: new Date().setHours(14, 12, 0, 0), end: new Date().setHours(14, 12, 0, 0)}
+          {start: new Date().setHours(14, 7, 0, 0), end: new Date().setHours(14, 7, 0, 0)}
         ]
       case 2:
         return [
@@ -97,7 +97,7 @@ function updateTimer() {
                         {start: new Date().setHours(12, 18, 0, 0), end: new Date().setHours(12, 51, 0, 0)},
                         {start: new Date().setHours(12, 56, 0, 0), end: new Date().setHours(13, 29, 0, 0)},
                         {start: new Date().setHours(13, 34, 0, 0), end: new Date().setHours(14, 7, 0, 0)}, 
-                        {start: new Date().setHours(14, 12, 0, 0), end: new Date().setHours(14, 12, 0, 0)}
+                        {start: new Date().setHours(14, 7, 0, 0), end: new Date().setHours(14, 7, 0, 0)}
                     ]
                     document.body.style.backgroundColor = "black"
                     sEnd = new Date().setHours(14, 7, 0, 0)
