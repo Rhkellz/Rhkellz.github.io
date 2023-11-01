@@ -189,7 +189,7 @@ function updateTimer() {
                                 weekCompleted += getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end - new Date()
                             }
                             //console.log(weekCompleted)
-                            let weekPercent = Math.floor((100 - weekCompleted / weekTotal) * 100)
+                            let weekPercent = Math.floor(100 - (weekCompleted / weekTotal) * 100)
                             document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
                            break
                         }
