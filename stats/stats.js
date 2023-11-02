@@ -161,38 +161,35 @@ function updateTimer() {
                 let weekTotal = 0
                 let weekCompleted = 0
                 let weekPercent = 0
-         
-                for (var j = new Date().getDate(); j >= 0; j--) {
-                   //if (j >= date.getDate()) {
-                      console.log(data[j].typeday)
-                       if (data[j].typeday == 4) {
-                           if (data[j+1].typeday == 1 || data[j+1].typeday == 2 || data[j+1].typeday == 3) {
-                               weekStart = j+1
-                           }
-                       }
-                   //}
+                let dayAsIndex = data.indexOf(data.find(x => x.day === new Date().getDate() && x.month === new Date().getMonth()))
+                for (var j = dayAsIndex; j >= dayAsIndex - 6; j--) {
+                      if (data[j].typeday == 4) {
+                          if (data[j+1].typeday == 1 || data[j+1].typeday == 2 || data[j+1].typeday == 3) {
+                             weekStart = j+1
+                          }
+                   }
                 }
                 //console.log(weekStart)
                 for (var h = weekStart; h < (weekStart + 10); h++) {//10 is  problem
                     if (data[h].typeday == 4) {
                         if (data[h+1].typeday == 4 && (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3)) {
                             weekEnd = h-1
-                           console.log(weekStart + ", " + weekEnd)
                             for (var l = weekStart; l <= weekEnd; l++) {
                                 weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
                             }
-                            for (var k = weekStart; k <= new Date().getDate(); k++) {
+                            for (var k = weekStart; k < dayAsIndex; k++) {
                                 weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
                             }
-                            if (date > getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end) {
-                                weekCompleted += getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end - getPeriods(data[currentDay].typeday)[0].start
+                            if (date > getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end) {
+                                weekCompleted += getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end - getPeriods(data[dayAsIndex].typeday)[0].start
                                 weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
                             } else {
-                                weekCompleted += getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end - new Date()
+                                weekCompleted += getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end - new Date()
                                 weekPercent = Math.floor(100 - (weekCompleted / weekTotal) * 100)
                             }
-                            //console.log(weekCompleted)
-                            document.getElementById("weekPercent").innerText = weekCompleted + ", " + weekTotal// weekPercent + "% school week completed"
+                            console.log(weekCompleted)
+                            //weekTotal is correct weekCompleted only shows today's completion?
+                            document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
                            break
                         }
                     }
