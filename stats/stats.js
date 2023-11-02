@@ -184,11 +184,9 @@ function updateTimer() {
                                 weekCompleted += getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end - getPeriods(data[dayAsIndex].typeday)[0].start
                                 weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
                             } else {
-                                weekCompleted += getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end - new Date()
-                                weekPercent = Math.floor(100 - (weekCompleted / weekTotal) * 100)
+                                weekCompleted += new Date() - getPeriods(data[dayAsIndex].typeday)[0].start
+                                weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
                             }
-                            console.log(weekTotal)
-                            //weekTotal is correct weekCompleted only shows today's completion?
                             document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
                            break
                         }
