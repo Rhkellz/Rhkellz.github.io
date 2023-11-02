@@ -166,7 +166,7 @@ function updateTimer() {
                    //if (j >= date.getDate()) {
                       console.log(data[j].typeday)
                        if (data[j].typeday == 4) {
-                           if (data[j+1].typeday == 1 || data[j+1].typedaay == 2 || data[j+1].typeday == 3) {
+                           if (data[j+1].typeday == 1 || data[j+1].typeday == 2 || data[j+1].typeday == 3) {
                                weekStart = j+1
                            }
                        }
