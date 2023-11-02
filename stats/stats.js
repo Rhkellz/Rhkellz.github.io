@@ -160,7 +160,8 @@ function updateTimer() {
                 let weekEnd = 0
                 let weekTotal = 0
                 let weekCompleted = 0
-
+                let weekPercent = 0
+         
                 for (var j = new Date().getDate(); j >= 0; j--) {
                    //if (j >= date.getDate()) {
                       console.log(data[j].typeday)
@@ -185,11 +186,12 @@ function updateTimer() {
                             }
                             if (date > getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end) {
                                 weekCompleted += getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end - getPeriods(data[currentDay].typeday)[0].start
+                                weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
                             } else {
                                 weekCompleted += getPeriods(data[new Date().getDate()].typeday)[getPeriods(data[new Date().getDate()].typeday).length-1].end - new Date()
+                                weekPercent = Math.floor(100 - (weekCompleted / weekTotal) * 100)
                             }
                             //console.log(weekCompleted)
-                            let weekPercent = Math.floor(100 - (weekCompleted / weekTotal) * 100)
                             document.getElementById("weekPercent").innerText = weekCompleted + ", " + weekTotal// weekPercent + "% school week completed"
                            break
                         }
