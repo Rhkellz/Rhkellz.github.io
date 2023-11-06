@@ -87,51 +87,24 @@ function updateTimer() {
                 typeDay = data[i].typeday
                 switch (typeDay) {
                     case 1://wildkit monday
-                    periods = [
-                        {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 3, 0, 0)},
-                        {start: new Date().setHours(9, 8, 0, 0), end: new Date().setHours(9, 41, 0, 0)},
-                        {start: new Date().setHours(9, 46, 0, 0), end: new Date().setHours(10, 19, 0, 0)},
-                        {start: new Date().setHours(10, 24, 0, 0), end: new Date().setHours(10, 57, 0, 0)},
-                        {start: new Date().setHours(11, 2, 0, 0), end: new Date().setHours(11, 35, 0, 0)},
-                        {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(12, 13, 0, 0)},
-                        {start: new Date().setHours(12, 18, 0, 0), end: new Date().setHours(12, 51, 0, 0)},
-                        {start: new Date().setHours(12, 56, 0, 0), end: new Date().setHours(13, 29, 0, 0)},
-                        {start: new Date().setHours(13, 34, 0, 0), end: new Date().setHours(14, 7, 0, 0)}, 
-                        {start: new Date().setHours(14, 7, 0, 0), end: new Date().setHours(14, 7, 0, 0)}
-                    ]
+                    periods = getPeriods(1)
                     document.body.style.backgroundColor = "black"
                     sEnd = new Date().setHours(14, 7, 0, 0)
                     break
                     case 2://orange day
-                    periods = [
-                        {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 55, 0, 0)},
-                        {start: new Date().setHours(10, 5, 0, 0), end: new Date().setHours(11, 30, 0, 0)},
-                        {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(13, 5, 0, 0)},
-                        {start: new Date().setHours(13, 15, 0, 0), end: new Date().setHours(13, 55, 0, 0)},
-                        {start: new Date().setHours(14, 5, 0, 0), end: new Date().setHours(15, 35, 0, 0)},
-                        {start: new Date().setHours(15, 35, 0, 0), end: new Date().setHours(15, 35, 0, 0)}//fixes a 2:07 bug because i dont know how my code works 
-                    ]
+                    periods = getPeriods(2)
                     document.body.style.backgroundColor = "#ff7000"
                     sEnd = new Date().setHours(15, 35, 0, 0)
                     break
                     case 3://blue days
-                    periods = [
-                        {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 55, 0, 0)},
-                        {start: new Date().setHours(10, 5, 0, 0), end: new Date().setHours(11, 30, 0, 0)},
-                        {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(13, 5, 0, 0)},
-                        {start: new Date().setHours(13, 15, 0, 0), end: new Date().setHours(13, 55, 0, 0)},
-                        {start: new Date().setHours(14, 5, 0, 0), end: new Date().setHours(15, 35, 0, 0)},
-                        {start: new Date().setHours(15, 35, 0, 0), end: new Date().setHours(15, 35, 0, 0)}//fixes a 2:07 bug because i dont know how my code works 
-                    ]
+                    periods = getPeriods(3)
                     document.body.style.backgroundColor = "#125e70"
                     break
                     case 4://no school
                     document.body.style.backgroundColor = "gray"
                     break
                     case 5://futures day
-                    periods = [
-                        {start: new Date().setHours(8, 0, 0, 0), end: new Date().setHours(12, 0, 0, 0)}
-                    ]
+                    periods = getPeriods(5)
                     document.body.style.backgroundColor = "purple"
                     timeleft = timer(periods)[0]
                     otimeleft = -1
