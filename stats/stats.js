@@ -125,7 +125,11 @@ function updateTimer() {
                     dayCompleted = periods[periods.length - 1].end - date
                 }
                 let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
-                document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
+                if (date > dayCompleted = periods[periods.length - 1].end) {
+                   document.getElementById("dayPercent").innerText = "100% school day completed"
+                } else {
+                   document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
+                }
                 }
             }
         }
