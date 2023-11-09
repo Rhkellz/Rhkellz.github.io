@@ -120,12 +120,13 @@ function updateTimer() {
                 let dayTotal = periods[periods.length - 1].end - periods[0].start;
                 let dayCompleted = 0
                 if (date > periods[periods.length - 1].end) {
-                    dayCompleted = periods[periods.length - 1].end - periods[0].start
+                    //dayCompleted = periods[periods.length - 1].end - periods[0].start
+                    document.getElementById("dayPercent").innerText = "100% school day completed"
                 } else {
                     dayCompleted = periods[periods.length - 1].end - date
+                    let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
+                    document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
                 }
-                let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
-                document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
                 }
             }
         }
