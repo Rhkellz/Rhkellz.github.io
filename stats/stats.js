@@ -87,45 +87,49 @@ function updateTimer() {
                 typeDay = data[i].typeday
                 switch (typeDay) {
                     case 1://wildkit monday
-                    periods = getPeriods(1)
-                    document.body.style.backgroundColor = "black"
-                    sEnd = new Date().setHours(14, 7, 0, 0)
-                    break
+                       periods = getPeriods(1)
+                       document.body.style.backgroundColor = "black"
+                       sEnd = new Date().setHours(14, 7, 0, 0)
+                       break
                     case 2://orange day
-                    periods = getPeriods(2)
-                    document.body.style.backgroundColor = "#ff7000"
-                    sEnd = new Date().setHours(15, 35, 0, 0)
-                    break
+                       periods = getPeriods(2)
+                       document.body.style.backgroundColor = "#ff7000"
+                       sEnd = new Date().setHours(15, 35, 0, 0)
+                       break
                     case 3://blue days
-                    periods = getPeriods(3)
-                    document.body.style.backgroundColor = "#125e70"
-                    break
+                       periods = getPeriods(3)
+                       document.body.style.backgroundColor = "#125e70"
+                       sEnd = new Date().setHours(15, 35, 0, 0)
+                       break
                     case 4://no school
-                    document.body.style.backgroundColor = "gray"
-                    break
+                       document.body.style.backgroundColor = "gray"
+                       break
                     case 5://futures day
-                    periods = getPeriods(5)
-                    document.body.style.backgroundColor = "purple"
-                    timeleft = timer(periods)[0]
-                    otimeleft = -1
-                    sEnd = new Date().setHours(12, 0, 0, 0)
-                    percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
-                    break
+                       periods = getPeriods(5)
+                       document.body.style.backgroundColor = "purple"
+                       timeleft = timer(periods)[0]
+                       otimeleft = -1
+                       sEnd = new Date().setHours(12, 0, 0, 0)
+                       percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
+                       break
                     default:
                     timeleft = -1
                     otimeleft = -1
                     document.body.style.backgroundColor = "gray"
                     }
-                
-                let dayTotal = periods[periods.length - 1].end - periods[0].start;
-                let dayCompleted = 0
-                if (date > periods[periods.length - 1].end) {
-                    //dayCompleted = periods[periods.length - 1].end - periods[0].start
-                    document.getElementById("dayPercent").innerText = "100% school day completed"
+                if (typeDay != 4) {
+                   let dayTotal = periods[periods.length - 1].end - periods[0].start;
+                   let dayCompleted = 0
+                   if (date > periods[periods.length - 1].end) {
+                       //dayCompleted = periods[periods.length - 1].end - periods[0].start
+                       document.getElementById("dayPercent").innerText = "100% school day completed"
+                   } else {
+                       dayCompleted = periods[periods.length - 1].end - date
+                       let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
+                       document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
+                   }
                 } else {
-                    dayCompleted = periods[periods.length - 1].end - date
-                    let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
-                    document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
+                   document.getElementById("dayPercent").innerText = "No school"
                 }
                 }
             }
