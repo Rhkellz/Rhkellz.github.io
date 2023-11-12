@@ -129,7 +129,7 @@ function updateTimer() {
                        document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
                    }
                 } else {
-                   document.getElementById("dayPercent").innerText = "No school"
+                   document.getElementById("dayPercent").innerText = "No School"
                 }
                 }
             }
