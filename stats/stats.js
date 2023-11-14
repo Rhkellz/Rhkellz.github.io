@@ -64,7 +64,7 @@ function getPeriods(x) {
 }
 
 function updateTimer() {
-   console.log("B")
+   console.log("C")
   let timeleft
   let otimeleft
   var monthDate = date.getDate()
