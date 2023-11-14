@@ -151,15 +151,15 @@ function updateTimer() {
                    let dayTotal = periods[periods.length - 1].end - periods[0].start;
                    let dayCompleted = 0
                    if (date > periods[periods.length - 1].end) {
-                       //dayCompleted = periods[periods.length - 1].end - periods[0].start
-                       //document.getElementById("dayPercent").innerText = "100% school day completed"
+                       dayCompleted = periods[periods.length - 1].end - periods[0].start
+                       document.getElementById("dayPercent").innerText = "100% school day completed"
                    } else {
                        dayCompleted = periods[periods.length - 1].end - date
                        let dayPercent = Math.floor(100 - (dayCompleted / dayTotal) * 100)
-                       //document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
+                       document.getElementById("dayPercent").innerText = dayPercent + "% school day completed"
                    }
                 } else {
-                   //document.getElementById("dayPercent").innerText = "No School"
+                   document.getElementById("dayPercent").innerText = "No School"
                 }
               
               const minutes = Math.floor(timeleft / 1000 / 60)
@@ -185,6 +185,44 @@ function updateTimer() {
             }
           }
         }
+
+        let weekStart = 0
+        let weekEnd = 0
+        let weekTotal = 0
+        let weekCompleted = 0
+        let weekPercent = 0
+        let dayAsIndex = data.indexOf(data.find(x => x.day === new Date().getDate() && x.month === new Date().getMonth()))
+        for (var j = dayAsIndex; j >= dayAsIndex - 6; j--) {
+           if (data[j].typeday == 4) {
+              if (data[j+1].typeday == 1 || data[j+1].typeday == 2 || data[j+1].typeday == 3) {
+                 weekStart = j+1
+                 }
+              }
+        }
+                //console.log(weekStart)
+        for (var h = weekStart; h < (weekStart + 10); h++) {//10 is  problem
+                    if (data[h].typeday == 4) {
+                        if (data[h+1].typeday == 4 && (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3)) {
+                            weekEnd = h-1
+                            for (var l = weekStart; l <= weekEnd; l++) {
+                                weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
+                            }
+                            for (var k = weekStart; k < dayAsIndex; k++) {
+                                weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
+                            }
+                            if (date > getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end) {
+                                weekCompleted += getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end - getPeriods(data[dayAsIndex].typeday)[0].start
+                                weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
+                            } else {
+                                weekCompleted += new Date() - getPeriods(data[dayAsIndex].typeday)[0].start
+                                weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
+                            }
+                            //document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
+                           break
+                        }
+                    }
+      }
+         
       })
 }
 
