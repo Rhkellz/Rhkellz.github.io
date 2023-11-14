@@ -74,11 +74,7 @@ function updateTimer() {
   let sEnd
   let currentDay
   let obar = new Date().setHours(11, 40, 0, 0)
-  let operiods = [
-     {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(12, 20, 0, 0)},
-     {start: new Date().setHours(12, 20, 0, 0), end: new Date().setHours(12, 30, 0, 0)},//fix for bug i dont understand, may cause issues
-     {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 55, 0, 0)}
-  ]
+  let operiods
   fetch('/data/monthschedule.json')
       .then(function(resp) {
         return resp.json()
@@ -101,6 +97,11 @@ function updateTimer() {
                        periods = getPeriods(typeDay)
                        document.body.style.backgroundColor = "#ff7000"
                        timeleft = timer(periods)[0]
+                       let operiods = [
+                          {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(12, 20, 0, 0)},
+                          {start: new Date().setHours(12, 20, 0, 0), end: new Date().setHours(12, 30, 0, 0)},//fix for bug i dont understand, may cause issues
+                          {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 55, 0, 0)}
+                       ]
                        if (date > obar) {
                           otimeleft = -1
                        } else {
@@ -122,6 +123,11 @@ function updateTimer() {
                        }
                        sEnd = new Date().setHours(15, 35, 0, 0)
                        percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
+                       let operiods = [
+                          {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(12, 20, 0, 0)},
+                          {start: new Date().setHours(12, 20, 0, 0), end: new Date().setHours(12, 30, 0, 0)},//fix for bug i dont understand, may cause issues
+                          {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 55, 0, 0)}
+                       ]
                        break
                     case 4://no school
                        document.body.style.backgroundColor = "gray"
