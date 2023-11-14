@@ -64,6 +64,7 @@ function getPeriods(x) {
 }
 
 function updateTimer() {
+   console.log("D")
   let timeleft
   let otimeleft
   var monthDate = date.getDate()
@@ -102,7 +103,7 @@ function updateTimer() {
                           {start: new Date().setHours(12, 20, 0, 0), end: new Date().setHours(12, 30, 0, 0)},//fix for bug i dont understand, may cause issues
                           {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 55, 0, 0)}
                        ]
-                       if (date > obar) {
+                       if (date < obar) {
                           otimeleft = -1
                        } else {
                           otimeleft = timer(operiods)[0]
@@ -115,7 +116,7 @@ function updateTimer() {
                        periods = getPeriods(typeDay)
                        document.body.style.backgroundColor = "#125e70"
                        timeleft = timer(periods)[0]
-                       if (date > obar) {
+                       if (date < obar) {
                           otimeleft = -1
                        } else {
                           otimeleft = timer(operiods)[0]
