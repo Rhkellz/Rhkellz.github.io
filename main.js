@@ -229,12 +229,12 @@ function updateTimer() {
 function toggleStats() {
   var x = document.getElementById("weekPercent");
   var y = document.getElementById("dayPercent");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    y.style.display = "block";
-  } else {
+  if (x.style.display === "block") {
     x.style.display = "none";
     y.style.display = "none";
+  } else {
+    x.style.display = "block";
+    y.style.display = "block";
   }
 }
 
