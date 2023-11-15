@@ -13,7 +13,7 @@ function twoDigits(num) {
 function timer(x) {
   for (let i = 0; i < x.length; i++) {
     if (date < x[i].start) {
-      return [x[i].start - date, x[i+1].start - x[i].end]
+      return [x[i].start - date, x[i].start - x[i-1].end]
       }
     if (date < x[i].end) {
       return [x[i].end - date, x[i].end - x[i].start]
@@ -103,7 +103,7 @@ function updateTimer() {
                   ]
                   document.body.style.backgroundColor = "#ff7000"
                   timeleft = timer(periods)[0]
-                  if (date > obar) {
+                  if (date < obar) {
                     otimeleft = -1
                   } else {
                     otimeleft = timer(operiods)[0]
@@ -225,6 +225,20 @@ function updateTimer() {
          
       })
 }
+
+function toggleStats() {
+  var x = document.getElementById("weekPercent");
+  var y = document.getElementById("dayPercent");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = "block";
+  } else {
+    x.style.display = "none";
+    y.style.display = "none";
+  }
+}
+
+document.getElementById("toggleStats").onclick = toggleStats
 
 function updateUpdateTimer() {
    setInterval(time, 10)
