@@ -1,93 +1,81 @@
 
 <head>
-    <style>
-       @font-face {
-        font-family: "Trip Sans";
-        src: url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.eot");
-        src: url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.eot?#iefix")format("embedded-opentype"),
-        url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.woff2")format("woff2"),
-        url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.woff")format("woff"),
-        url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.ttf")format("truetype"),
-        url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.svg#Trip Sans")format("svg");
-        }
-        
-      body {
-        background-color: black; 
-        text-align:center;
+  <style>
+     @font-face {
+      font-family: "Trip Sans";
+      src: url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.eot");
+      src: url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.eot?#iefix")format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.woff2")format("woff2"),
+      url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.woff")format("woff"),
+      url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.ttf")format("truetype"),
+      url("https://db.onlinewebfonts.com/t/076abc8ba1bb38a0713dec3b63b880e4.svg#Trip Sans")format("svg");
       }
       
-      #clock {
-        font-family: 'Trip Sans', sans-serif;
-        font-size: 6vmax;
-        letter-spacing: .08rem;
-        color: #DEDEDE;
-        text-align: center;
-        margin-top: 11vmax;
-      
-      }
-      
-      #percent {
-        font-family: 'Trip Sans', sans-serif;
-        font-size: 6vmax;
-        letter-spacing: .08rem;
-        color: #DEDEDE;
-        text-align: center;
-        margin-top: 10%;
-      }
-
-     #dayPercent {
-        font-family: 'Trip Sans', sans-serif;
-        font-size: 6vmax;
-        letter-spacing: .08rem;
-        color: #DEDEDE;
-        text-align: center;
-        margin-top: 15%;
-      }
-
-    #weekPercent {
-        font-family: 'Trip Sans', sans-serif;
-        font-size: 6vmax;
-        letter-spacing: .08rem;
-        color: #DEDEDE;
-        text-align: center;
-        margin-top: 20%;
-      }
-    
-      ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
+    body {
+      background-color: black; 
     }
     
-    li {
-      display: block;
-      padding-right: .7vmax;
-      padding-left: .7vmax;
-      padding-bottom: .6vmax;
-      padding-top: .6vmax;
-      background-color: #dddddd;
-      float: left;
-    }
-    
-    a {
-      color:black;
+    #clock {
       font-family: 'Trip Sans', sans-serif;
-      text-decoration:none;
+      font-size: 6vmax;
+      letter-spacing: .08rem;
+      color: #DEDEDE;
+      text-align: center;
+      margin-top: 9vmax;
     }
-    </style>
-    <script type="module" src="main.js"></script>
-  </head>
-<div id="navbar">
-    <ul>
-      <li><a href="https://Rhkellz.github.io">Timer</a></li>
-      <li><a href="https://Rhkellz.github.io/stats/stats.html">Extra</a></li>
-      <li><a href="https://github.com/Rhkellz/Rhkellz.github.io" target="_blank">Github</a></li>
-  </ul>
-  </div>
-  <body>
-    <div id="clock"></div>
-    <div id="percent"></div>
-    <div id="dayPercent"></div>
-    <div id="weekPercent"></div>
-  </body>
+    
+    #percent {
+      font-family: 'Trip Sans', sans-serif;
+      font-size: 6vmax;
+      letter-spacing: .08rem;
+      color: #DEDEDE;
+      text-align: center;
+      margin-top: 10%;
+    }
+
+   #dayPercent {
+      font-family: 'Trip Sans', sans-serif;
+      font-size: 4.5vmax;
+      letter-spacing: .08rem;
+      color: #DEDEDE;
+      text-align: center;
+      margin-top: -6%;
+    }
+
+  #weekPercent {
+      font-family: 'Trip Sans', sans-serif;
+      font-size: 4.5vmax;
+      letter-spacing: .08rem;
+      color: #DEDEDE;
+      text-align: center;
+      margin-top: 6%;
+    }
+  
+  a {
+    color:black;
+    font-family: 'Trip Sans', sans-serif;
+    text-decoration: none;
+    text-align: left;
+    font-size: .9vmax;
+    margin-top: 2vmax;
+    margin-left: .2vmax;
+  }
+
+  #toggleStats {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -8%;
+    
+  }
+  </style>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <a href="https://github.com/Rhkellz/Rhkellz.github.io" target="_blank">Github</a>
+  <div id="clock"></div>
+  <div id="percent"></div>
+  <button id="toggleStats">Extra Stats</button>
+  <div id="dayPercent"></div>
+  <div id="weekPercent"></div>
+</body>
