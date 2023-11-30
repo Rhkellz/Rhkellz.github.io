@@ -68,12 +68,13 @@ function updateTimer() {
   let otimeleft
   var monthDate = date.getDate()
   var month = date.getMonth()
+  var dateTime = now.getHours()*60+now.getMinutes()
   let periods
   let operiods
   let percent
   let opercent
   let typeDay
-  let sStart = new Date().setHours(8, 30, 0, 0)
+  let sStart = 510
   let sEnd
   let obar = new Date().setHours(11, 40, 0, 0)
   fetch('./data/monthschedule.json')
@@ -91,7 +92,7 @@ function updateTimer() {
                   document.body.style.backgroundColor = "black"
                   timeleft = timer(periods)[0]
                   otimeleft = -1
-                  sEnd = new Date().setHours(14, 7, 0, 0)
+                  sEnd = 847
                   percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
                   break
                 case 2://orange day
@@ -109,7 +110,7 @@ function updateTimer() {
                     otimeleft = timer(operiods)[0]
                     opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
                   }
-                  sEnd = new Date().setHours(15, 35, 0, 0)
+                  sEnd = 935
                   percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
                   break
                 case 3://blue days
@@ -127,7 +128,7 @@ function updateTimer() {
                     otimeleft = timer(operiods)[0]
                     opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
                   }
-                  sEnd = new Date().setHours(15, 35, 0, 0)
+                  sEnd = 935
                   percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
                   break
                 case 4://no school
@@ -138,7 +139,7 @@ function updateTimer() {
                   document.body.style.backgroundColor = "purple"
                   timeleft = timer(periods)[0]
                   otimeleft = -1
-                  sEnd = new Date().setHours(12, 0, 0, 0)
+                  sEnd = 720
                   percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
                   break
                 default:
@@ -174,9 +175,9 @@ function updateTimer() {
               }
               
             
-              if (date >= sEnd || timeleft == -1) { 
+              if (dateTime >= sEnd || timeleft == -1) { 
                 document.getElementById("clock").innerText = "School's over"
-              } else if (date <= sStart) {
+              } else if (dateTime <= sStart) {
                 document.getElementById("clock").innerText = "School hasn't started"
               }
               if (typeDay == 4) {
