@@ -68,7 +68,7 @@ function updateTimer() {
   let otimeleft
   var monthDate = date.getDate()
   var month = date.getMonth()
-  var dateTime = now.getHours()*60+now.getMinutes()
+  var dateTime = date.getHours()*60+date.getMinutes()
   let periods
   let operiods
   let percent
