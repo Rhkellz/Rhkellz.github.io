@@ -177,7 +177,7 @@ function updateTimer() {
             
               if (dateTime >= sEnd || timeleft == -1) { 
                 document.getElementById("clock").innerText = "School's over"
-              } else if (dateTime <= sStart) {
+              } else if (dateTime < sStart) {
                 document.getElementById("clock").innerText = "School hasn't started"
               }
               if (typeDay == 4) {
