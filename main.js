@@ -185,7 +185,7 @@ function updateTimer() {
               }
               if (document.body.style.backgroundColor == "black") {
                 document.getElementById("githubLink").color = "white"
-              )
+              }
             }
           }
         }
