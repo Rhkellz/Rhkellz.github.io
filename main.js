@@ -183,6 +183,9 @@ function updateTimer() {
               if (typeDay == 4) {
                 document.getElementById("clock").innerText = "No School"
               }
+              if (document.body.style.backgroundColor == "black") {
+                document.getElementById("githubLink").color = "white"
+              )
             }
           }
         }
