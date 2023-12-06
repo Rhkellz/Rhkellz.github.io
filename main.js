@@ -105,7 +105,7 @@ function updateTimer() {
                     otimeleft = -1
                   } else {
                     otimeleft = timer(operiods)[0]
-                    opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
+                    opercent = 100 - (timer(operiods)[0] / timer(operiods)[1]) * 100
                     altPeriodsName = timer(operiods)[2]
                   }
                   periods = getPeriods(typeDay)
@@ -114,7 +114,7 @@ function updateTimer() {
                   periodsName = timer(periods)[2]
                   otimeleft = -1
                   sEnd = 847
-                  percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
+                  percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   break
                 case 2://orange day
                   periods = getPeriods(typeDay)
