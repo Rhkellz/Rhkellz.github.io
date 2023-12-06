@@ -130,11 +130,11 @@ function updateTimer() {
                     otimeleft = -1
                   } else {
                     otimeleft = timer(operiods)[0]
-                    opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
+                    opercent = 100 - (timer(operiods)[0] / timer(operiods)[1]) * 100
                     altPeriodsName = timer(operiods)[2]
                   }
                   sEnd = 935
-                  percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
+                  percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   break
                 case 3://blue days
                   periods = getPeriods(typeDay)
@@ -150,11 +150,11 @@ function updateTimer() {
                     otimeleft = -1
                   } else {
                     otimeleft = timer(operiods)[0]
-                    opercent = Math.floor(100 - (timer(operiods)[0] / timer(operiods)[1]) * 100)
+                    opercent = 100 - (timer(operiods)[0] / timer(operiods)[1]) * 100
                     altPeriodsName = timer(operiods)[2]
                   }
                   sEnd = 935
-                  percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
+                  percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   break
                 case 4://no school
                   document.body.style.backgroundColor = "gray"
@@ -165,7 +165,7 @@ function updateTimer() {
                   timeleft = timer(periods)[0]
                   otimeleft = -1
                   sEnd = 720
-                  percent = Math.floor(100 - (timer(periods)[0] / timer(periods)[1]) * 100)
+                  percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   periodsName = timer(periods)[2]
                   break
                 default:
@@ -198,14 +198,14 @@ function updateTimer() {
                 document.getElementById("clock").innerText = periodsName + ": " + `${twoDigits(minutes)}:${twoDigits(seconds)}` + " left"
                 document.getElementById("progress1").style.width = percent + "%"
                 document.getElementById("progress2").style.display = "none"
-                document.getElementById("classPercent").innerText = periodsName + " is " + percent + "% completed"
+                document.getElementById("classPercent").innerText = periodsName + " is " + Math.floor(percent) + "% completed"
               } else {
                 document.getElementById("clock").innerText = periodsName + ": " + `${twoDigits(minutes)}:${twoDigits(seconds)}` + " left"
                 document.getElementById("progress1").style.width = percent + "%"
                 document.getElementById("percent").innerText = altPeriodsName + ": " + `${twoDigits(ominutes)}:${twoDigits(oseconds)}` + " left"
                 document.getElementById("progress2").style.width = opercent + "%"
-                document.getElementById("classPercent").innerText = periodsName + " is " + percent + "% completed"
-                document.getElementById("altClassPercent").innerText = altPeriodsName + " is " + opercent + "% completed"
+                document.getElementById("classPercent").innerText = periodsName + " is " + Math.floor(percent) + "% completed"
+                document.getElementById("altClassPercent").innerText = altPeriodsName + " is " + Math.floor(opercent) + "% completed"
               }
               
               
