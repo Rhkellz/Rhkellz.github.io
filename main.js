@@ -11,7 +11,7 @@ function twoDigits(num) {
 }
 
 function timer(x) {
-  date = new Date().setHours(13, 10, 0, 0)
+  //date = new Date().setHours(13, 10, 0, 0)
   for (let i = 0; i < x.length; i++) {
     if (date < x[i].start) {
       return [x[i].start - date, x[i].start - x[i-1].end, x[i].name]
