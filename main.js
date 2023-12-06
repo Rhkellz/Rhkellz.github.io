@@ -11,13 +11,17 @@ function twoDigits(num) {
 }
 
 function timer(x) {
-  //date = new Date().setHours(13, 10, 0, 0)
+  //date = new Date().setHours(15, 25, 0, 0)
   for (let i = 0; i < x.length; i++) {
     if (date < x[i].start) {
-      return [x[i].start - date, x[i].start - x[i-1].end, x[i].name]
+      if (date > x[i-1].end) {
+        return [x[i].start - date, x[i].start - x[i-1].end, "Passing Period"]
+      } else {
+        return [x[i].start - date, x[i].start - x[i-1].end, x[i].name]
+      }
       }
     if (date < x[i].end) {
-      return [x[i].end - date, x[i].end - x[i].start, "Passing Period"]
+      return [x[i].end - date, x[i].end - x[i].start, x[i].name]
     }
   }
   return -1
