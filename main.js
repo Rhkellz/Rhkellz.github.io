@@ -204,7 +204,7 @@ function updateTimer() {
                 document.getElementById("altClassPercent").innerText = altPeriodsName + " is " + opercent + "% completed"
               }
               
-              /*
+              
               if (dateTime >= sEnd || timeleft == -1) { 
                 document.getElementById("clock").innerText = "School's over"
 
@@ -225,7 +225,7 @@ function updateTimer() {
               if (document.body.style.backgroundColor == "black") {
                 document.getElementById("githubLink").style.color = "white"
                 document.getElementById("progress1").style.color = "white"
-              }*/
+              }
             }
           }
         }
