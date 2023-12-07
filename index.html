@@ -34,22 +34,24 @@
       text-align: center;
       margin-top: 6%;
       position: flex;
+      margin-bottom:-5vh;
     }
   
   a {
-    color:black;
+    color:white;
     font-family: 'Trip Sans', sans-serif;
     text-decoration: none;
     text-align: left;
     font-size: .9vmax;
-    margin-left: 1vmax;
+    margin-top: 1.36vh;
+    float: left;
+    height:1.2vmax;
   }
 
   .progress {
-    height: 1vw;
+    height: 2.2vh;
     position: relative;
     background: black;
-    width: 58%;
   }
 
   #progress2 {
@@ -60,27 +62,46 @@
   #menu {
     justify-content: center;
     align-items: center;
-    width: 8vmax;
-    padding-top: .3vmax;
-    padding-bottom: .3vmax;
+    padding-top: .1vmax;
+    padding-left: .1vmax;
     position: relative;
-    background: white;
   }
 
-  #menu aside {
+  #menuClick {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTIiIHdpZHRoPSIxOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAuNSAxOCAxMiIgdmlld0JveD0iMCAwLjUgMTggMTIiPjxyZWN0IHk9Ii41IiB3aWR0aD0iMTgiIGhlaWdodD0iMiIgZmlsbD0iI2ZmZiIvPjxyZWN0IHk9IjUuNSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIGZpbGw9IiNmZmYiLz48cmVjdCB5PSIxMC41IiB3aWR0aD0iMTgiIGhlaWdodD0iMiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 1.1vmax;
+    top: 0;
+    margin: 1vh;
+    left: 0;
+    width: 1.2vmax;
+    height: 1.2vmax;
+    float: left;
+  }
+
+  aside {
     visibility: hidden;
     background: #c2c2c2;
     width: 8vmax;
     position: absolute;
     top: 2rem;
     border: none;
-    height: 100vh;
+    height: 96.5vh;
     visibility: hidden;
     font-family: 'Trip Sans', sans-serif;
   }
 
-  #menu aside.visible {
+  .visible {
     visibility: visible;
+  }
+
+  li {
+    display: flex;
+  }
+
+  .toggledNav {
+    display: inline;
   }
   </style>
   <script type="module" src="main.js"></script>
@@ -88,7 +109,8 @@
 <body>
   <div id="progress1" class="progress"></div>
   <div id="menu">
-    <a href="#" class="toggle">Stats</a>
+    <div id="menuClick" class="toggle"></div>
+    <a class="toggledNav" id="githubLink"href="https://github.com/Rhkellz/Rhkellz.github.io" target="_blank">Github</a>
     <aside>
       <div>
         <li id="classPercent"></li>
@@ -97,7 +119,6 @@
         <li id="weekPercent"></li>
       </div>
     </aside>
-    <a id="githubLink"href="https://github.com/Rhkellz/Rhkellz.github.io" target="_blank">Github</a>
   </div>
   <div id="clock"></div>
   <div id="percent"></div>
