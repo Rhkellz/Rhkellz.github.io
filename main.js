@@ -11,7 +11,7 @@ function twoDigits(num) {
 }
 
 function timer(x) {
-  //date = new Date().setHours(15, 25, 0, 0)
+  date = new Date().setHours(11, 50, 0, 0)
   for (let i = 0; i < x.length; i++) {
     if (date < x[i].start) {
       if (date > x[i-1].end) {
@@ -194,11 +194,13 @@ function updateTimer() {
               const ominutes = Math.floor(otimeleft / 1000 / 60)
               const oseconds = Math.floor(otimeleft / 1000) % 60
 
+              document.getElementById("classPercent").style.display = "block"
               if (otimeleft == -1 || date < obar || otimeleft == null) {
                 document.getElementById("clock").innerText = periodsName + ": " + `${twoDigits(minutes)}:${twoDigits(seconds)}` + " left"
                 document.getElementById("progress1").style.width = percent + "%"
                 document.getElementById("progress2").style.display = "none"
                 document.getElementById("classPercent").innerText = periodsName + " is " + Math.floor(percent) + "% completed"
+                document.getElementById("altClassPercent").style.display = "none"
               } else {
                 document.getElementById("clock").innerText = periodsName + ": " + `${twoDigits(minutes)}:${twoDigits(seconds)}` + " left"
                 document.getElementById("progress1").style.width = percent + "%"
@@ -206,7 +208,9 @@ function updateTimer() {
                 document.getElementById("progress2").style.width = opercent + "%"
                 document.getElementById("classPercent").innerText = periodsName + " is " + Math.floor(percent) + "% completed"
                 document.getElementById("altClassPercent").innerText = altPeriodsName + " is " + Math.floor(opercent) + "% completed"
+                document.getElementById("altClassPercent").style.display = "block"
               }
+
               
               
               if (dateTime >= sEnd || timeleft == -1) { 
@@ -214,17 +218,22 @@ function updateTimer() {
 
                 document.getElementById("progress1").style.display = "none"
                 document.getElementById("progress2").style.display = "none"
+                document.getElementById("classPercent").style.display = "none"
+                document.getElementById("altClassPercent").style.display = "none"
               } else if (dateTime < sStart) {
                 document.getElementById("clock").innerText = "School hasn't started"
 
                 document.getElementById("progress1").style.display = "none"
                 document.getElementById("progress2").style.display = "none"
+                document.getElementById("classPercent").style.display = "none"
+                document.getElementById("altClassPercent").style.display = "none"
               }
               if (typeDay == 4) {
                 document.getElementById("clock").innerText = "No School"
-
                 document.getElementById("progress1").style.display = "none"
                 document.getElementById("progress2").style.display = "none"
+                document.getElementById("classPercent").style.display = "none"
+                document.getElementById("altClassPercent").style.display = "none"
               }
               if (document.body.style.backgroundColor == "black") {
                 document.getElementById("githubLink").style.color = "white"
@@ -265,7 +274,7 @@ function updateTimer() {
                      weekCompleted += new Date() - getPeriods(data[dayAsIndex].typeday)[0].start
                      weekPercent = Math.floor((weekCompleted / weekTotal) * 100)
                  }
-                 document.getElementById("weekPercent").innerText = "The school week is " + weekPercent + "% completed"
+                 document.getElementById("weekPercent").innerText = weekPercent + "% school week completed"
                  break
               }
          }
