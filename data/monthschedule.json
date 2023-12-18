@@ -318,5 +318,35 @@
     "month": 11,
     "day": 18,
     "typeday": 1
+  },
+  {
+    "month": 11,
+    "day": 19,
+    "typeday": 6
+  },
+  {
+    "month": 11,
+    "day": 20,
+    "typeday": 7
+  },
+  {
+    "month": 11,
+    "day": 21,
+    "typeday": 6
+  },
+  {
+    "month": 11,
+    "day": 22,
+    "typeday": 7
+  },
+  {
+    "month": 11,
+    "day": 23,
+    "typeday": 4
+  },
+  {
+    "month": 11,
+    "day": 24,
+    "typeday": 4
   }
 ]
