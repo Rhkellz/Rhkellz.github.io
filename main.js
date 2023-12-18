@@ -63,6 +63,22 @@ function getPeriods(x) {
         ]
       case 5:
         return [{start: new Date().setHours(8, 0, 0, 0), end: new Date().setHours(12, 0, 0, 0), name: "Full Period"}]
+      case 6:
+        return [
+          {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 40, 0, 0), name: "Block 1"},
+          {start: new Date().setHours(9, 50, 0, 0), end: new Date().setHours(11, 0, 0, 0), name: "Block 3"},
+          {start: new Date().setHours(11, 10, 0, 0), end: new Date().setHours(12, 20, 0, 0), name: "Block 5A"},
+          {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 10, 0, 0), name: "Lunch 2"},
+          {start: new Date().setHours(13, 20, 0, 0), end: new Date().setHours(14, 30, 0, 0), name: "Block 7"},
+        ]
+      case 7:
+          return [
+          {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 40, 0, 0), name: "Block 2"},
+          {start: new Date().setHours(9, 50, 0, 0), end: new Date().setHours(11, 0, 0, 0), name: "Block 4"},
+          {start: new Date().setHours(11, 10, 0, 0), end: new Date().setHours(12, 20, 0, 0), name: "Block 6A"},
+          {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 10, 0, 0), name: "Lunch 2"},
+          {start: new Date().setHours(13, 20, 0, 0), end: new Date().setHours(14, 30, 0, 0), name: "Block 8"},
+        ]
       default:
         break
     }
@@ -167,6 +183,46 @@ function updateTimer() {
                   sEnd = 720
                   percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   periodsName = timer(periods)[2]
+                  break
+                case 6://early dismissal orange
+                  periods = getPeriods(typeDay)
+                  operiods = [
+                    {start: new Date().setHours(11, 10, 0, 0), end: new Date().setHours(11, 50, 0, 0), name: "Lunch 1"},
+                    {start: new Date().setHours(11, 50, 0, 0), end: new Date().setHours(12, 0, 0, 0), name: "Passing Period"},//fix for bug i dont understand, may cause issues
+                    {start: new Date().setHours(12, 0, 0, 0), end: new Date().setHours(13, 10, 0, 0), name: "Block 5B"}
+                  ]
+                  document.body.style.backgroundColor = "#ff7000"
+                  timeleft = timer(periods)[0]
+                  periodsName = timer(periods)[2]
+                  if (date < obar) {
+                    otimeleft = -1
+                  } else {
+                    otimeleft = timer(operiods)[0]
+                    opercent = 100 - (timer(operiods)[0] / timer(operiods)[1]) * 100
+                    altPeriodsName = timer(operiods)[2]
+                  }
+                  sEnd = 870
+                  percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
+                  break
+                case 7://early dismissal blue
+                  periods = getPeriods(typeDay)
+                  operiods = [
+                    {start: new Date().setHours(11, 10, 0, 0), end: new Date().setHours(11, 50, 0, 0), name: "Lunch 1"},
+                    {start: new Date().setHours(11, 50, 0, 0), end: new Date().setHours(12, 0, 0, 0), name: "Passing Period"},//fix for bug i dont understand, may cause issues
+                    {start: new Date().setHours(12, 0, 0, 0), end: new Date().setHours(13, 10, 0, 0), name: "Block 6B"}
+                  ]
+                  document.body.style.backgroundColor = "#125e70"
+                  timeleft = timer(periods)[0]
+                  periodsName = timer(periods)[2]
+                  if (date < obar) {
+                    otimeleft = -1
+                  } else {
+                    otimeleft = timer(operiods)[0]
+                    opercent = 100 - (timer(operiods)[0] / timer(operiods)[1]) * 100
+                    altPeriodsName = timer(operiods)[2]
+                  }
+                  sEnd = 870
+                  percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   break
                 default:
                   timeleft = -1
