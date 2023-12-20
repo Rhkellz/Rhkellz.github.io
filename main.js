@@ -185,6 +185,7 @@ function updateTimer() {
                   periodsName = timer(periods)[2]
                   break
                 case 6://early dismissal orange
+                  obar = new Date().setHours(11, 10, 0, 0)
                   periods = getPeriods(typeDay)
                   operiods = [
                     {start: new Date().setHours(11, 10, 0, 0), end: new Date().setHours(11, 50, 0, 0), name: "Lunch 1"},
@@ -205,6 +206,7 @@ function updateTimer() {
                   percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   break
                 case 7://early dismissal blue
+                  obar = new Date().setHours(11, 10, 0, 0)
                   periods = getPeriods(typeDay)
                   operiods = [
                     {start: new Date().setHours(11, 10, 0, 0), end: new Date().setHours(11, 50, 0, 0), name: "Lunch 1"},
