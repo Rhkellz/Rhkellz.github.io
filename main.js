@@ -127,6 +127,7 @@ function updateTimer() {
                   periods = getPeriods(typeDay)
                   document.body.style.backgroundColor = "black"
                   document.getElementById("progress1").style.background = "white"
+                  document.getElementById("progress2").style.background = "white"
                   timeleft = timer(periods)[0]
                   periodsName = timer(periods)[2]
                   otimeleft = -1
