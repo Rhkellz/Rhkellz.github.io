@@ -35,8 +35,8 @@ function getPeriods(x) {
           {start: new Date().setHours(9, 8, 0, 0), end: new Date().setHours(9, 41, 0, 0), name: "Block 2"},
           {start: new Date().setHours(9, 46, 0, 0), end: new Date().setHours(10, 19, 0, 0), name: "Block 3"},
           {start: new Date().setHours(10, 24, 0, 0), end: new Date().setHours(10, 57, 0, 0), name: "Block 4"},
-          {start: new Date().setHours(11, 2, 0, 0), end: new Date().setHours(11, 35, 0, 0), name: "Block 5A"},
-          {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(12, 13, 0, 0), name: "Block 5B"},
+          {start: new Date().setHours(11, 2, 0, 0), end: new Date().setHours(11, 35, 0, 0), name: "Block 5A / Lunch 1"},
+          {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(12, 13, 0, 0), name: "Block 5B / Lunch 2"},
           {start: new Date().setHours(12, 18, 0, 0), end: new Date().setHours(12, 51, 0, 0), name: "Block 6"},
           {start: new Date().setHours(12, 56, 0, 0), end: new Date().setHours(13, 29, 0, 0), name: "Block 7"},
           {start: new Date().setHours(13, 34, 0, 0), end: new Date().setHours(14, 7, 0, 0), name: "Block 8"}, 
@@ -112,18 +112,6 @@ function updateTimer() {
               typeDay = data[i].typeday
               switch (typeDay) {
                 case 1://wildkit monday
-                  obar = new Date().setHours(11, 2, 0, 0)
-                  operiods = [
-                    {start: new Date().setHours(11, 2, 0, 0), end: new Date().setHours(11, 35, 0, 0), name: "Lunch 1"},
-                    {start: new Date().setHours(11, 40, 0, 0), end: new Date().setHours(12, 13, 0, 0), name: "Lunch 2"}
-                  ]
-                  if (date < obar) {
-                    otimeleft = -1
-                  } else {
-                    otimeleft = timer(operiods)[0]
-                    opercent = 100 - (timer(operiods)[0] / timer(operiods)[1]) * 100
-                    altPeriodsName = timer(operiods)[2]
-                  }
                   periods = getPeriods(typeDay)
                   document.body.style.backgroundColor = "black"
                   document.getElementById("progress1").style.background = "white"
