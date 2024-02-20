@@ -243,5 +243,40 @@
     "month": 1,
     "day": 18,
     "typeday": 4
+  },
+  {
+    "month": 1,
+    "day": 19,
+    "typeday": 4
+  },
+  {
+    "month": 1,
+    "day": 20,
+    "typeday": 2
+  },
+  {
+    "month": 1,
+    "day": 21,
+    "typeday": 3
+  },
+  {
+    "month": 1,
+    "day": 22,
+    "typeday": 2
+  },
+  {
+    "month": 1,
+    "day": 23,
+    "typeday": 3
+  },
+  {
+    "month": 1,
+    "day": 24,
+    "typeday": 4
+  },
+  {
+    "month": 1,
+    "day": 25,
+    "typeday": 4
   }
 ]
