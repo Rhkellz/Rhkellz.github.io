@@ -62,7 +62,7 @@ function getPeriods(x) {
           //{start: new Date().setHours(15, 35, 0, 0), end: new Date().setHours(15, 35, 0, 0)}//fixes a 2:07 bug because i dont know how my code works 
         ]
       case 4:
-        return [{start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(8, 30, 0, 0), name: "test"}]
+        return [{start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(8, 30, 0, 1), name: "test"}]
       case 5:
         return [{start: new Date().setHours(8, 0, 0, 0), end: new Date().setHours(12, 0, 0, 0), name: "Full Period"}]
       case 6:
