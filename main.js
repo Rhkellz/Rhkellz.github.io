@@ -62,7 +62,7 @@ function getPeriods(x) {
           //{start: new Date().setHours(15, 35, 0, 0), end: new Date().setHours(15, 35, 0, 0)}//fixes a 2:07 bug because i dont know how my code works 
         ]
       case 4:
-        return [{start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(8, 30, 0, 1), name: "test"}]
+          break
       case 5:
         return [{start: new Date().setHours(8, 0, 0, 0), end: new Date().setHours(12, 0, 0, 0), name: "Full Period"}]
       case 6:
@@ -314,10 +314,18 @@ function updateTimer() {
               if (data[h+1].typeday == 4) {//&& (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {
                  weekEnd = h-1
                  for (var l = weekStart; l <= weekEnd; l++) {
-                    weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
+                    if (data[l].typeday == 4) {
+                       weektotal += 0
+                    } else {
+                       weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
+                    }
                  }
                  for (var k = weekStart; k < dayAsIndex; k++) {
-                    weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
+                    if (data[k].typeday == 4) {
+                       weekCompleted +=0
+                    } else {
+                       weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
+                    }
                  }
                  if (date > getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end) {
                     weekCompleted += getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end - getPeriods(data[dayAsIndex].typeday)[0].start
