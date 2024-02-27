@@ -303,12 +303,10 @@ function updateTimer() {
         let dayAsIndex = data.indexOf(data.find(x => x.day === new Date().getDate() && x.month === new Date().getMonth()))
          console.log("index: " + dayAsIndex)
         for (var j = dayAsIndex; j >= dayAsIndex - 6; j--) {
-           if (data[j].typeday == 4) {
-              if ((data[j].typeday - 1) == 4) {
-                 if (data[j+1].typeday == 1 || data[j+1].typeday == 2 || data[j+1].typeday == 3) {
-                    weekStart = j+1
-                  }
-              }
+           if (data[j].typeday == 4 && (data[j].typeday - 1) == 4) {
+               if (data[j+1].typeday == 1 || data[j+1].typeday == 2 || data[j+1].typeday == 3) {
+                  weekStart = j+1
+               }
             }
         }
                 console.log("WeekStart: " + weekStart)
