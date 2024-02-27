@@ -314,18 +314,10 @@ function updateTimer() {
               if (data[h+1].typeday == 4) {//&& (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {
                  weekEnd = h-1
                  for (var l = weekStart; l <= weekEnd; l++) {
-                    if (data[l].typeday == 4) {
-                       weektotal += 0
-                    } else {
-                       weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
-                    }
+                    weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
                  }
                  for (var k = weekStart; k < dayAsIndex; k++) {
-                    if (data[k].typeday == 4) {
-                       weekCompleted +=0
-                    } else {
-                       weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
-                    }
+                    weekCompleted += getPeriods(data[k].typeday)[getPeriods(data[k].typeday).length-1].end - getPeriods(data[k].typeday)[0].start
                  }
                  if (date > getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end) {
                     weekCompleted += getPeriods(data[dayAsIndex].typeday)[getPeriods(data[dayAsIndex].typeday).length-1].end - getPeriods(data[dayAsIndex].typeday)[0].start
