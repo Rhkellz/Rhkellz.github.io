@@ -62,7 +62,9 @@ function getPeriods(x) {
           //{start: new Date().setHours(15, 35, 0, 0), end: new Date().setHours(15, 35, 0, 0)}//fixes a 2:07 bug because i dont know how my code works 
         ]
       case 4:
-          break
+          return [
+             {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(8, 30, 0, 0), name: "Block 2"},
+             {start: new Date().setHours(8:, 30, 0, 0), end: new Date().setHours(8, 30, 0, 0), name: "Block 4"}]
       case 5:
         return [{start: new Date().setHours(8, 0, 0, 0), end: new Date().setHours(12, 0, 0, 0), name: "Full Period"}]
       case 6:
@@ -308,11 +310,12 @@ function updateTimer() {
               }
             }
         }
-                console.log(weekStart)
+                console.log("WeekStart: " + weekStart)
         for (var h = weekStart; h < (weekStart + 10); h++) {//10 is  problem
            if (data[h].typeday == 4) {
               if (data[h+1].typeday == 4) {//&& (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {
                  weekEnd = h-1
+                 console.log("weekEnd: " + weekEnd)
                  for (var l = weekStart; l <= weekEnd; l++) {
                     weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
                  }
