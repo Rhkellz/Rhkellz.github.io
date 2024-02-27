@@ -301,6 +301,7 @@ function updateTimer() {
         let weekCompleted = 0
         let weekPercent = 0
         let dayAsIndex = data.indexOf(data.find(x => x.day === new Date().getDate() && x.month === new Date().getMonth()))
+         console.log("index: " + dayAsIndex)
         for (var j = dayAsIndex; j >= dayAsIndex - 6; j--) {
            if (data[j].typeday == 4) {
               if ((data[j].typeday - 1) == 4) {
