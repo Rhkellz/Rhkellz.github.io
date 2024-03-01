@@ -90,7 +90,6 @@ function getPeriods(x) {
           {start: new Date().setHours(12, 15, 0, 0), end: new Date().setHours(13, 25, 0, 0), name: "Block 6A"},
           {start: new Date().setHours(13, 35, 0, 0), end: new Date().setHours(14, 15, 0, 0), name: "Lunch 2"},
           {start: new Date().setHours(14, 25, 0, 0), end: new Date().setHours(15, 35, 0, 0), name: "Block 8"},
-          //{start: new Date().setHours(15, 35, 0, 0), end: new Date().setHours(15, 35, 0, 0)}//fixes a 2:07 bug because i dont know how my code works 
         ]
       default:
         break
@@ -233,7 +232,7 @@ function updateTimer() {
                   periods = getPeriods(typeDay)
                   operiods = [
                     {start: new Date().setHours(12, 15, 0, 0), end: new Date().setHours(12, 55, 0, 0), name: "Lunch 1"},
-                    {start: new Date().setHours(12, 55, 0, 0), end: new Date().setHours(12, 55, 0, 0), name: "Passing Period"},
+                    {start: new Date().setHours(12, 55, 0, 0), end: new Date().setHours(13, 5, 0, 0), name: "Passing Period"},
                     {start: new Date().setHours(13, 5, 0, 0), end: new Date().setHours(14, 15, 0, 0), name: "Block 6B"}
                   ]
                   document.body.style.backgroundColor = "#125e70"
