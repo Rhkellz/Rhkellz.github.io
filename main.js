@@ -83,14 +83,14 @@ function getPeriods(x) {
           {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 10, 0, 0), name: "Lunch 2"},
           {start: new Date().setHours(13, 20, 0, 0), end: new Date().setHours(14, 30, 0, 0), name: "Block 8"},
         ]
-      case 8:
+      /*case 8:
           return [
           {start: new Date().setHours(9, 35, 0, 0), end: new Date().setHours(10, 45, 0, 0), name: "Block 2"},
           {start: new Date().setHours(10, 55, 0, 0), end: new Date().setHours(12, 05, 0, 0), name: "Block 4"},
           {start: new Date().setHours(12, 15, 0, 0), end: new Date().setHours(13, 25, 0, 0), name: "Block 6A"},
           {start: new Date().setHours(13, 35, 0, 0), end: new Date().setHours(14, 15, 0, 0), name: "Lunch 2"},
           {start: new Date().setHours(14, 25, 0, 0), end: new Date().setHours(15, 35, 0, 0), name: "Block 8"},
-        ]
+        ]*/
       default:
         break
     }
