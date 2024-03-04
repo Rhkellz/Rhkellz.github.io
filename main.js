@@ -340,7 +340,7 @@ function updateTimer() {
                 console.log("WeekStart: " + weekStart)
         for (var h = weekStart; h < (weekStart + 10); h++) {//10 is  problem
            if (data[h].typeday == 4) {
-              if (data[h+1].typeday == 4) {//&& (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {
+              if (data[h+1].typeday == 4 && (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {//&& (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {
                  weekEnd = h-1
                  console.log("weekEnd: " + weekEnd)
                  for (var l = weekStart; l <= weekEnd; l++) {
