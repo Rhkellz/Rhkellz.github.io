@@ -330,8 +330,8 @@ function updateTimer() {
         let weekPercent = 0
         let dayAsIndex = data.indexOf(data.find(x => x.day === new Date().getDate() && x.month === new Date().getMonth()))
          console.log("index: " + dayAsIndex)
-        for (var j = dayAsIndex; j >= dayAsIndex - 6; j--) {
-           if (data[j].typeday == 4 && (data[j].typeday - 1) == 4) {
+        for (var j = dayAsIndex; j >= (dayAsIndex - 6); j--) {
+           if (data[j].typeday == 4 && data[j-1].typeday == 4) {
               console.log("check" + j)
                if (data[j+1].typeday == 1 || data[j+1].typeday == 2 || data[j+1].typeday == 3) {
                   weekStart = j+1
