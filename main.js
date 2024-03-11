@@ -332,6 +332,7 @@ function updateTimer() {
          console.log("index: " + dayAsIndex)
         for (var j = dayAsIndex; j >= dayAsIndex - 6; j--) {
            if (data[j].typeday == 4 && (data[j].typeday - 1) == 4) {
+              console.log("check" + j)
                if (data[j+1].typeday == 1 || data[j+1].typeday == 2 || data[j+1].typeday == 3) {
                   weekStart = j+1
                }
