@@ -1,6 +1,21 @@
 [
  {
     "month": 3,
+    "day": 24,
+    "typeday": 3
+  }, 
+ {
+    "month": 3,
+    "day": 25,
+    "typeday": 2
+  }, 
+ {
+    "month": 3,
+    "day": 26,
+    "typeday": 3
+  }, 
+ {
+    "month": 3,
     "day": 27,
     "typeday": 4
   }, 
