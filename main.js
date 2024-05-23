@@ -235,6 +235,7 @@ function updateTimer() {
                   percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   break
                case 7:
+                  otimeleft = -1
                   periods = getPeriods(typeDay)
                   document.body.style.backgroundColor = "#ff7000"
                   timeleft = timer(periods)[0]
@@ -243,6 +244,7 @@ function updateTimer() {
                   percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   break
                case 8:
+                  otimeleft = -1
                   periods = getPeriods(typeDay)
                   document.body.style.backgroundColor = "#125e70"
                   timeleft = timer(periods)[0]
@@ -343,7 +345,7 @@ function updateTimer() {
                 console.log("WeekStart: " + weekStart)
         for (var h = weekStart; h < (weekStart + 10); h++) {//10 is  problem
            if (data[h].typeday == 4) {
-              if (data[h+1].typeday == 4 && (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {//&& (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {
+              if (data[h+1].typeday == 4 && (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7 || data[h-1].typeday == 8)) {//&& (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {
                  weekEnd = h-1
                  console.log("weekEnd: " + weekEnd)
                  for (var l = weekStart; l <= weekEnd; l++) {
