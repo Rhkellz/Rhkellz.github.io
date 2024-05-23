@@ -83,14 +83,20 @@ function getPeriods(x) {
           {start: new Date().setHours(12, 30, 0, 0), end: new Date().setHours(13, 10, 0, 0), name: "Lunch 2"},
           {start: new Date().setHours(13, 20, 0, 0), end: new Date().setHours(14, 30, 0, 0), name: "Block 8"},
         ]
-      /*case 8:
+       case 8:
           return [
-          {start: new Date().setHours(9, 35, 0, 0), end: new Date().setHours(10, 45, 0, 0), name: "Block 2"},
-          {start: new Date().setHours(10, 55, 0, 0), end: new Date().setHours(12, 05, 0, 0), name: "Block 4"},
-          {start: new Date().setHours(12, 15, 0, 0), end: new Date().setHours(13, 25, 0, 0), name: "Block 6A"},
-          {start: new Date().setHours(13, 35, 0, 0), end: new Date().setHours(14, 15, 0, 0), name: "Lunch 2"},
-          {start: new Date().setHours(14, 25, 0, 0), end: new Date().setHours(15, 35, 0, 0), name: "Block 8"},
-        ]*/
+          {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 18, 0, 0), name: "Block 1"},
+          {start: new Date().setHours(9, 23, 0, 0), end: new Date().setHours(10, 11, 0, 0), name: "Block 3"},
+          {start: new Date().setHours(10, 16, 0, 0), end: new Date().setHours(11, 4, 0, 0), name: "Block 5"},
+          {start: new Date().setHours(11, 9, 0, 0), end: new Date().setHours(12, 0, 0, 0), name: "Block 7"},
+        ]
+      case 9:
+          return [
+          {start: new Date().setHours(8, 30, 0, 0), end: new Date().setHours(9, 18, 0, 0), name: "Block 2"},
+          {start: new Date().setHours(9, 23, 0, 0), end: new Date().setHours(10, 11, 0, 0), name: "Block 4"},
+          {start: new Date().setHours(10, 16, 0, 0), end: new Date().setHours(11, 4, 0, 0), name: "Block 6"},
+          {start: new Date().setHours(11, 9, 0, 0), end: new Date().setHours(12, 0, 0, 0), name: "Block 8"},
+        ]
       default:
         break
     }
@@ -228,24 +234,20 @@ function updateTimer() {
                   sEnd = 870
                   percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   break
+               case 7:
+                  periods = getPeriods(typeDay)
+                  document.body.style.backgroundColor = "#ff7000"
+                  timeleft = timer(periods)[0]
+                  periodsName = timer(periods)[2]
+                  sEnd = 720
+                  percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
+                  break
                case 8:
                   periods = getPeriods(typeDay)
-                  operiods = [
-                    {start: new Date().setHours(12, 15, 0, 0), end: new Date().setHours(12, 55, 0, 0), name: "Lunch 1"},
-                    {start: new Date().setHours(12, 55, 0, 0), end: new Date().setHours(13, 5, 0, 0), name: "Passing Period"},
-                    {start: new Date().setHours(13, 5, 0, 0), end: new Date().setHours(14, 15, 0, 0), name: "Block 6B"}
-                  ]
                   document.body.style.backgroundColor = "#125e70"
                   timeleft = timer(periods)[0]
                   periodsName = timer(periods)[2]
-                  if (date < obar) {
-                    otimeleft = -1
-                  } else {
-                    otimeleft = timer(operiods)[0]
-                    opercent = 100 - (timer(operiods)[0] / timer(operiods)[1]) * 100
-                    altPeriodsName = timer(operiods)[2]
-                  }
-                  sEnd = 935
+                  sEnd = 720
                   percent = 100 - (timer(periods)[0] / timer(periods)[1]) * 100
                   break
                 default:
