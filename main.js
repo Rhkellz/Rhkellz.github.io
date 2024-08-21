@@ -304,7 +304,7 @@ function updateTimer() {
                 document.getElementById("progress2").style.display = "none"
                 document.getElementById("classPercent").style.display = "none"
                 document.getElementById("altClassPercent").style.display = "none"
-              } else if (dateTime < sStart) {
+              } else if (dateTime < 830) {
                 document.getElementById("clock").innerText = "School hasn't started"
 
                 document.getElementById("progress1").style.display = "none"
@@ -333,21 +333,17 @@ function updateTimer() {
         let weekCompleted = 0
         let weekPercent = 0
         let dayAsIndex = data.indexOf(data.find(x => x.day === new Date().getDate() && x.month === new Date().getMonth()))
-         console.log("index: " + dayAsIndex)
         for (var j = dayAsIndex; j >= (dayAsIndex - 6); j--) {
            if (data[j].typeday == 4 && data[j-1].typeday == 4) {
-              console.log("check" + j)
                if (data[j+1].typeday == 1 || data[j+1].typeday == 2 || data[j+1].typeday == 3) {
                   weekStart = j+1
                }
             }
         }
-                console.log("WeekStart: " + weekStart)
         for (var h = weekStart; h < (weekStart + 10); h++) {//10 is  problem
            if (data[h].typeday == 4) {
               if (data[h+1].typeday == 4 && (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7 || data[h-1].typeday == 8)) {//&& (data[h-1].typeday == 1 || data[h-1].typeday == 2 || data[h-1].typeday == 3 || data[h-1].typeday == 6 || data[h-1].typeday == 7)) {
                  weekEnd = h-1
-                 console.log("weekEnd: " + weekEnd)
                  for (var l = weekStart; l <= weekEnd; l++) {
                     weekTotal += getPeriods(data[l].typeday)[getPeriods(data[l].typeday).length-1].end - getPeriods(data[l].typeday)[0].start
                  }
