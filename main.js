@@ -304,7 +304,7 @@ function updateTimer() {
                 document.getElementById("progress2").style.display = "none"
                 document.getElementById("classPercent").style.display = "none"
                 document.getElementById("altClassPercent").style.display = "none"
-              } else if (dateTime < 830) {
+              } else if (dateTime < 510) {
                 document.getElementById("clock").innerText = "School hasn't started"
 
                 document.getElementById("progress1").style.display = "none"
