@@ -68,5 +68,40 @@
     "month": 7,
     "day": 26,
     "typeday": 1
+  },
+ {
+    "month": 7,
+    "day": 27,
+    "typeday": 2
+  },
+ {
+    "month": 7,
+    "day": 28,
+    "typeday": 3
+  },
+ {
+    "month": 7,
+    "day": 30,
+    "typeday": 2
+  },
+ {
+    "month": 7,
+    "day": 31,
+    "typeday": 3
+  },
+ {
+    "month": 8,
+    "day": 1,
+    "typeday": 4
+  },
+ {
+    "month": 8,
+    "day": 2,
+    "typeday": 4
+  },
+ {
+    "month": 8,
+    "day": 3,
+    "typeday": 1
   }
 ]
