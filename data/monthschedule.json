@@ -7,32 +7,32 @@
  {
     "month": 1,
     "day": 5,
-    "typeday": 4
-  }, 
- {
-    "month": 1,
-    "day": 6,
     "typeday": 1
   }, 
  {
     "month": 1,
-    "day": 7,
+    "day": 6,
     "typeday": 2
+  }, 
+ {
+    "month": 1,
+    "day": 7,
+    "typeday": 3
   }, 
  {
     "month": 1,
     "day": 6,
-    "typeday": 3
-  }, 
- {
-    "month": 1,
-    "day": 7,
     "typeday": 2
   }, 
  {
     "month": 1,
-    "day": 8,
+    "day": 7,
     "typeday": 3
+  }, 
+ {
+    "month": 1,
+    "day": 8,
+    "typeday": 4
   }, 
  {
     "month": 1,
@@ -42,11 +42,11 @@
  {
     "month": 1,
     "day": 10,
-    "typeday": 4
+    "typeday": 1
   }, 
  {
     "month": 1,
     "day": 11,
-    "typeday": 1
+    "typeday": 2
   }
 ]
